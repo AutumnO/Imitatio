@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cd693ed0ce17149934c621e50a3bfc, type: 3}
+  m_Name: GroundPlaceholderData
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 66f07f972f1643d429ba15caf25180cd, type: 2}
+  - {fileID: 11400000, guid: f1b6f863ede5b67459beef7edced874e, type: 2}
+  - {fileID: 11400000, guid: e0d51898d8206a14eaf45ba1e2abd372, type: 2}
+  walkingSpeed: 0
+  passable: 1
