@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private SpriteRenderer _renderer;
+    [SerializeField] private Sprite _unselected;
+    [SerializeField] private Sprite _selected;
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseEnter()
     {
-        
+        _renderer.sprite = _selected;
+    }
+    void OnMouseExit()
+    {
+        _renderer.sprite = _unselected;
     }
 }
