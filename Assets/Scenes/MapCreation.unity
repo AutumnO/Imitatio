@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 40059766}
   - component: {fileID: 40059765}
   - component: {fileID: 40059764}
+  - component: {fileID: 40059767}
   m_Layer: 5
   m_Name: WestButton
   m_TagString: Untagged
@@ -205,19 +206,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 40059765}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
-        m_MethodName: OnClickCompassWest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &40059765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +245,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40059762}
   m_CullTransparentMesh: 1
+--- !u!114 &40059767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40059762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476466607}
+          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+          m_MethodName: OnClickCompassWest
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476466607}
+          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+          m_MethodName: OnClickCompassWest
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &300666514
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +503,102 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: dbfb4554-6442-4915-95d3-afc00fddc576
     m_ActionName: Map Creation/Zoom[/Mouse/scroll/down,/Mouse/scroll/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476466607}
+        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        m_MethodName: HandTool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1ce6960f-d3d4-4f4d-99a4-349ea380cdd6
+    m_ActionName: Map Creation/HandTool[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476466607}
+        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        m_MethodName: HammerTool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 31876238-9da6-4678-b8bc-0f997af46e4d
+    m_ActionName: Map Creation/HammerTool[/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476466607}
+        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        m_MethodName: LightingTool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5e05288b-32ef-4273-90d8-0112b4cd60f7
+    m_ActionName: Map Creation/LightingTool[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476466607}
+        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        m_MethodName: CopyTool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a9968167-12b2-4aaf-817e-88ec50538d7b
+    m_ActionName: Map Creation/CopyTool[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476466607}
+        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        m_MethodName: UndoTool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f90523f-5d5c-4858-b170-b4023b5f6e44
+    m_ActionName: Map Creation/UndoTool[/Keyboard/ctrl,/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476466607}
+        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        m_MethodName: RedoTool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 38885339-c7e8-4277-bd59-865d8d5f83df
+    m_ActionName: Map Creation/RedoTool[/Keyboard/ctrl,/Keyboard/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Map Creation
@@ -1102,6 +1232,7 @@ GameObject:
   - component: {fileID: 1295812682}
   - component: {fileID: 1295812681}
   - component: {fileID: 1295812680}
+  - component: {fileID: 1295812683}
   m_Layer: 5
   m_Name: NorthButton
   m_TagString: Untagged
@@ -1172,19 +1303,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1295812681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
-        m_MethodName: OnClickCompassNorth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1295812681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1342,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295812678}
   m_CullTransparentMesh: 1
+--- !u!114 &1295812683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295812678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476466607}
+          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+          m_MethodName: OnClickCompassNorth
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476466607}
+          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+          m_MethodName: OnClickCompassNorth
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1410550668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1399,7 @@ GameObject:
   - component: {fileID: 1410550672}
   - component: {fileID: 1410550671}
   - component: {fileID: 1410550670}
+  - component: {fileID: 1410550673}
   m_Layer: 5
   m_Name: EastButton
   m_TagString: Untagged
@@ -1305,19 +1470,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1410550671}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
-        m_MethodName: OnClickCompassEast
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1410550671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,6 +1509,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410550668}
   m_CullTransparentMesh: 1
+--- !u!114 &1410550673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410550668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476466607}
+          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+          m_MethodName: OnClickCompassEast
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476466607}
+          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+          m_MethodName: OnClickCompassEast
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1432107584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,17 +2047,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_PointAction: {fileID: 4344180210673577383, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_MoveAction: {fileID: -5837722050400567666, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_SubmitAction: {fileID: -294659344384366863, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_CancelAction: {fileID: 8346827812136687587, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_LeftClickAction: {fileID: -7785411455877554911, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_MiddleClickAction: {fileID: -563576877508477859, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_RightClickAction: {fileID: -561791096154292017, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_ScrollWheelAction: {fileID: -4258050284599956071, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -9208412147418754939, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -8799672894799853183, guid: 05b5ae9ba09eae940af8bd76d39306dc, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -2194,6 +2392,7 @@ GameObject:
   - component: {fileID: 2147135408}
   - component: {fileID: 2147135407}
   - component: {fileID: 2147135406}
+  - component: {fileID: 2147135409}
   m_Layer: 5
   m_Name: SouthButton
   m_TagString: Untagged
@@ -2264,19 +2463,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2147135407}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
-        m_MethodName: OnClickCompassSouth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2147135407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,6 +2502,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147135404}
   m_CullTransparentMesh: 1
+--- !u!114 &2147135409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147135404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476466607}
+          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+          m_MethodName: OnClickCompassSouth
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476466607}
+          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+          m_MethodName: OnClickCompassSouth
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &3207320242980936363
 PrefabInstance:
   m_ObjectHideFlags: 0
