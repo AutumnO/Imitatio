@@ -5,9 +5,38 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private Transform _camera;
+
+    private Vector3 _camPosition;
+    
     // MAP CREATION
     
-    // add limit to panning/zooming so one doesn't get too far away or close to grid
+    // TODO: add limit to panning/zooming so one doesn't get too far away or close to grid
+
+    private void ChangeCameraPosition(char direction, int moveAmount)
+    {
+        _camPosition = _camera.transform.position;
+
+        switch (direction)
+        {
+            case 'N':
+                _camPosition.y += moveAmount;
+                break;
+            case 'E':
+                _camPosition.x += moveAmount;
+                break;
+            case 'S':
+                _camPosition.y -= moveAmount;
+                break;
+            case 'W':
+                _camPosition.x -= moveAmount;
+                break;
+            default:
+                break;
+        }
+
+        _camera.transform.position = _camPosition;
+    }
 
     public void OnClickBack()
     {
@@ -30,19 +59,19 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickCompassNorth()
     {
-        Debug.Log("North");
+        ChangeCameraPosition('N', 1);
     }
     public void OnClickCompassEast()
     {
-        Debug.Log("East");
+        ChangeCameraPosition('E', 1);
     }
     public void OnClickCompassSouth()
     {
-        Debug.Log("South");
+        ChangeCameraPosition('S', 1);
     }
     public void OnClickCompassWest()
     {
-        Debug.Log("West");
+        ChangeCameraPosition('W', 1);
     }
 
     // Tools
