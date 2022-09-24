@@ -68,8 +68,6 @@ public class InputControls : MonoBehaviour
 
     // MAP CREATION
 
-    // TODO: add limit to panning so one doesn't get too far away from the grid
-
     public void OnClickBack()
     {
         Debug.Log("Back Clicked");
@@ -79,6 +77,8 @@ public class InputControls : MonoBehaviour
         Debug.Log("Save & Exit Clicked");
     }
 
+    
+    // Helper Functions
     private void ChangeCameraZoom(int direction)
     {
         _camSize = _camera.orthographicSize;
@@ -90,9 +90,9 @@ public class InputControls : MonoBehaviour
         
         _camera.orthographicSize = _camSize;
     }
-
     private void ChangeCameraPosition(char direction)
     {
+        // TODO: add limit to panning so one doesn't get too far away from the grid
         _camPosition = _camera.transform.position;
 
         switch (direction)
@@ -114,6 +114,27 @@ public class InputControls : MonoBehaviour
         }
 
         _camera.transform.position = _camPosition;
+    }
+
+    // Panel Changes
+    public void OnClickChangePanel(string panelName)
+    {
+        if (panelName == "Tile")
+        {
+            Debug.Log(panelName);
+        }
+        else if (panelName == "Prop")
+        {
+            Debug.Log(panelName);
+        }
+        else if (panelName == "Building")
+        {
+            Debug.Log(panelName);
+        }
+        else if (panelName == "Unknown")
+        {
+            Debug.Log(panelName);
+        }
     }
 
     // Hotkey Input
@@ -166,6 +187,7 @@ public class InputControls : MonoBehaviour
         if (context.performed)
             OnClickToolsRedo();
     }
+
 
     // Compass
     public void OnClickCompassZoomIn()
