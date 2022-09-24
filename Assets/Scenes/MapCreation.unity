@@ -653,7 +653,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Tile
+            m_StringArgument: Panel1
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &476466605
@@ -845,6 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 767403729}
+  _panelParent: {fileID: 1197605799}
 --- !u!4 &476466608
 Transform:
   m_ObjectHideFlags: 0
@@ -1301,7 +1302,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Unknown
+            m_StringArgument: Panel4
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1051908461
@@ -1529,7 +1530,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Building
+            m_StringArgument: Panel3
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1115989578
@@ -1680,7 +1681,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Prop
+            m_StringArgument: Panel2
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1192073718
@@ -2670,7 +2671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 85, y: 5}
+  m_AnchoredPosition: {x: 80, y: 5}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1550283751

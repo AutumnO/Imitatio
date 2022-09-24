@@ -6,7 +6,12 @@ using UnityEngine.InputSystem;
 public class InputControls : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
-    
+    [SerializeField] private Transform _panelParent;
+
+    private Transform _panel1;
+    private Transform _panel2;
+    private Transform _panel3;
+    private Transform _panel4;
     private Vector3 _camPosition;
     private float _camSize;
     private float _panSpeed;
@@ -46,6 +51,11 @@ public class InputControls : MonoBehaviour
         _copyToolAction = _playerInput.actions["CopyTool"];
         _undoToolAction = _playerInput.actions["UndoTool"];
         _redoToolAction = _playerInput.actions["RedoTool"];
+
+        _panel1 = _panelParent.Find("Panel1");
+        _panel2 = _panelParent.Find("Panel2");
+        _panel3 = _panelParent.Find("Panel3");
+        _panel4 = _panelParent.Find("Panel4");
     }
 
     private void FixedUpdate()
@@ -119,21 +129,27 @@ public class InputControls : MonoBehaviour
     // Panel Changes
     public void OnClickChangePanel(string panelName)
     {
-        if (panelName == "Tile")
+        Transform topPanel = _panelParent.Find(panelName);
+        topPanel.SetAsLastSibling();
+        if (panelName == "Panel1")
         {
-            Debug.Log(panelName);
+            _panel2.SetSiblingIndex(2);
+            _panel3.SetSiblingIndex(1);
         }
-        else if (panelName == "Prop")
+        else if (panelName == "Panel2")
         {
-            Debug.Log(panelName);
+            _panel1.SetSiblingIndex(2);
+            _panel3.SetSiblingIndex(1);
         }
-        else if (panelName == "Building")
+        else if (panelName == "Panel3")
         {
-            Debug.Log(panelName);
+            _panel4.SetSiblingIndex(2);
+            _panel2.SetSiblingIndex(1);
         }
-        else if (panelName == "Unknown")
+        else if (panelName == "Panel4")
         {
-            Debug.Log(panelName);
+            _panel3.SetSiblingIndex(2);
+            _panel2.SetSiblingIndex(1);
         }
     }
 
