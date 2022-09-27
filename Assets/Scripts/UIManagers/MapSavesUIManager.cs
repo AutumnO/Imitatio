@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MapSavesInputControl : MonoBehaviour
+public class MapSavesUIManager : MonoBehaviour
 {
+    [SerializeField] private SceneLoader _sceneLoader;
     public void OnClickBack()
     {
-        Debug.Log("Back");
+        StartCoroutine(_sceneLoader.LoadSceneAsync(0));
     }
     public void OnClickNewMap()
     {
-        Debug.Log("New Map");
+        StartCoroutine(_sceneLoader.LoadSceneAsync(2));
     }
     public void OnClickArchives()
     {

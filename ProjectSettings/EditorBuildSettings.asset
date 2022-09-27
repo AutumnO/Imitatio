@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: e92b962cca963c241a486132e455d75e
   - enabled: 1
+    path: Assets/Scenes/MapSaves.unity
+    guid: 2fefd4405ad19f1449ee9f99d3769334
+  - enabled: 1
     path: Assets/Scenes/MapCreation.unity
     guid: ad845c9fd86a8c84c97f02ca5c2d1412
   m_configObjects: {}

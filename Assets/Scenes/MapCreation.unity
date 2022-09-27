@@ -667,8 +667,9 @@ GameObject:
   - component: {fileID: 476466608}
   - component: {fileID: 476466606}
   - component: {fileID: 476466609}
+  - component: {fileID: 476466610}
   m_Layer: 0
-  m_Name: InputController
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -859,8 +860,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3adce430a3ac248908676b25cc41bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneLoader: {fileID: 476466610}
   _camera: {fileID: 767403729}
   _panelParent: {fileID: 1197605799}
+--- !u!114 &476466610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476466605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e570b49eead143a43861ff2227faa330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadingBarObject: {fileID: 3450906915618919140, guid: 09af6f2a00447d442bab75aa30b02520, type: 3}
 --- !u!1 &585201462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,12 +2138,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 408206483}
-  - {fileID: 1813631904}
   - {fileID: 1197605799}
   - {fileID: 683109579}
   - {fileID: 1432107585}
   - {fileID: 1550283750}
+  - {fileID: 408206483}
+  - {fileID: 1813631904}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

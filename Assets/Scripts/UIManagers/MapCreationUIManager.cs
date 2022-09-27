@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MapCreationInputControl : MonoBehaviour
+public class MapCreationUIManager : MonoBehaviour
 {
+    [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _panelParent;
 
@@ -80,11 +81,11 @@ public class MapCreationInputControl : MonoBehaviour
 
     public void OnClickBack()
     {
-        Debug.Log("Back Clicked");
+        StartCoroutine(_sceneLoader.LoadSceneAsync(1));
     }
     public void OnClickSaveExit()
     {
-        Debug.Log("Save & Exit Clicked");
+        StartCoroutine(_sceneLoader.LoadSceneAsync(1));
     }
 
 
