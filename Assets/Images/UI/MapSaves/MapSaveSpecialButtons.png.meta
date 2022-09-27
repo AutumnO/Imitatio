@@ -21,7 +21,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -115,10 +115,16 @@ TextureImporter:
         width: 79
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -39.5, y: 26.5}
+        - {x: 39.5, y: -26.5}
+        - {x: 39.5, y: 26.5}
+      physicsShape:
+      - - {x: -39.5, y: 26.5}
+        - {x: 39.5, y: -26.5}
+        - {x: 39.5, y: 26.5}
       tessellationDetail: 0
       bones: []
       spriteID: 66b359ec50b00c443adcb8cc64e3bf71
@@ -136,10 +142,37 @@ TextureImporter:
         width: 80
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 15, y: 29}
+        - {x: -20, y: 21}
+        - {x: -40, y: 2}
+        - {x: -40, y: -11}
+        - {x: -34, y: -18}
+        - {x: -14, y: -28}
+        - {x: 1, y: -39}
+        - {x: 14, y: -39}
+        - {x: 28, y: -25}
+        - {x: 29, y: 22}
+        - {x: 39, y: 22}
+        - {x: 40, y: 28}
+        - {x: 26, y: 39}
+        - {x: 16, y: 39}
+      physicsShape:
+      - - {x: 13.952156, y: 28.792656}
+        - {x: -10.359131, y: 24.408203}
+        - {x: -26.70335, y: 15.49601}
+        - {x: -40, y: -0.12440109}
+        - {x: -40, y: -11.537479}
+        - {x: 1.524723, y: -39}
+        - {x: 14.6677475, y: -39}
+        - {x: 28.213715, y: -25.220095}
+        - {x: 29.319168, y: 22.148056}
+        - {x: 40, y: 21.475338}
+        - {x: 40, y: 28.161827}
+        - {x: 26.98565, y: 39}
+        - {x: 15.247208, y: 39}
       tessellationDetail: 0
       bones: []
       spriteID: 7ee78ecd26df3234fa539f23468a967e

@@ -306,7 +306,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 433002551, guid: 59d01f87917862349945240420b63b66, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -339,8 +339,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickCompassWest
           m_Mode: 6
           m_Arguments:
@@ -355,8 +355,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickCompassWest
           m_Mode: 6
           m_Arguments:
@@ -450,8 +450,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: OnClickToolsHand
         m_Mode: 1
         m_Arguments:
@@ -644,8 +644,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickChangePanel
           m_Mode: 5
           m_Arguments:
@@ -665,8 +665,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476466608}
-  - component: {fileID: 476466607}
   - component: {fileID: 476466606}
+  - component: {fileID: 476466609}
   m_Layer: 0
   m_Name: InputController
   m_TagString: Untagged
@@ -701,8 +701,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: Pan
         m_Mode: 0
         m_Arguments:
@@ -717,8 +717,8 @@ MonoBehaviour:
     m_ActionName: Map Creation/Pan[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: Zoom
         m_Mode: 0
         m_Arguments:
@@ -733,8 +733,8 @@ MonoBehaviour:
     m_ActionName: Map Creation/Zoom[/Mouse/scroll/down,/Mouse/scroll/up]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: HandTool
         m_Mode: 0
         m_Arguments:
@@ -749,8 +749,8 @@ MonoBehaviour:
     m_ActionName: Map Creation/HandTool[/Keyboard/h]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: HammerTool
         m_Mode: 0
         m_Arguments:
@@ -765,8 +765,8 @@ MonoBehaviour:
     m_ActionName: Map Creation/HammerTool[/Keyboard/x]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: LightingTool
         m_Mode: 0
         m_Arguments:
@@ -781,8 +781,8 @@ MonoBehaviour:
     m_ActionName: Map Creation/LightingTool[/Keyboard/l]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: CopyTool
         m_Mode: 0
         m_Arguments:
@@ -797,8 +797,8 @@ MonoBehaviour:
     m_ActionName: Map Creation/CopyTool[/Keyboard/c]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: UndoTool
         m_Mode: 0
         m_Arguments:
@@ -813,8 +813,8 @@ MonoBehaviour:
     m_ActionName: Map Creation/UndoTool[/Keyboard/ctrl,/Keyboard/z]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: RedoTool
         m_Mode: 0
         m_Arguments:
@@ -832,20 +832,6 @@ MonoBehaviour:
   m_DefaultActionMap: Map Creation
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &476466607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476466605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9292ae276d393f44c9f4dc52ad3b5181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 767403729}
-  _panelParent: {fileID: 1197605799}
 --- !u!4 &476466608
 Transform:
   m_ObjectHideFlags: 0
@@ -861,6 +847,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476466609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476466605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3adce430a3ac248908676b25cc41bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 767403729}
+  _panelParent: {fileID: 1197605799}
 --- !u!1 &585201462
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,8 +944,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: OnClickToolsHammer
         m_Mode: 1
         m_Arguments:
@@ -1293,8 +1293,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickChangePanel
           m_Mode: 5
           m_Arguments:
@@ -1521,8 +1521,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickChangePanel
           m_Mode: 5
           m_Arguments:
@@ -1672,8 +1672,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickChangePanel
           m_Mode: 5
           m_Arguments:
@@ -1767,8 +1767,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: OnClickCompassZoomOut
         m_Mode: 1
         m_Arguments:
@@ -1801,7 +1801,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 1346655183, guid: 4fbd4638392791244a519e4f3c35b364, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1980,8 +1980,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: OnClickToolsCopy
         m_Mode: 1
         m_Arguments:
@@ -2106,7 +2106,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2199,7 +2199,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2243,7 +2243,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -704044399, guid: 59d01f87917862349945240420b63b66, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2276,8 +2276,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickCompassNorth
           m_Mode: 6
           m_Arguments:
@@ -2292,8 +2292,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickCompassNorth
           m_Mode: 6
           m_Arguments:
@@ -2410,7 +2410,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -2074438171, guid: 59d01f87917862349945240420b63b66, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2443,8 +2443,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickCompassEast
           m_Mode: 6
           m_Arguments:
@@ -2459,8 +2459,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickCompassEast
           m_Mode: 6
           m_Arguments:
@@ -2529,7 +2529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2795,8 +2795,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: OnClickToolsUndo
         m_Mode: 1
         m_Arguments:
@@ -2928,8 +2928,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: OnClickCompassZoomIn
         m_Mode: 1
         m_Arguments:
@@ -2962,7 +2962,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -2005272821, guid: 4fbd4638392791244a519e4f3c35b364, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3138,8 +3138,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: OnClickToolsLighting
         m_Mode: 1
         m_Arguments:
@@ -3353,8 +3353,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476466607}
-        m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+      - m_Target: {fileID: 476466609}
+        m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
         m_MethodName: OnClickToolsRedo
         m_Mode: 1
         m_Arguments:
@@ -3557,7 +3557,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -1142553819, guid: 59d01f87917862349945240420b63b66, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3590,8 +3590,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickCompassSouth
           m_Mode: 6
           m_Arguments:
@@ -3606,8 +3606,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476466607}
-          m_TargetAssemblyTypeName: InputControls, Assembly-CSharp
+        - m_Target: {fileID: 476466609}
+          m_TargetAssemblyTypeName: MapCreationInputControl, Assembly-CSharp
           m_MethodName: OnClickCompassSouth
           m_Mode: 6
           m_Arguments:
@@ -3637,7 +3637,7 @@ PrefabInstance:
     - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 476466607}
+      objectReference: {fileID: 476466609}
     - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3648,7 +3648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InputControls, Assembly-CSharp
+      value: MapCreationInputControl, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3740,7 +3740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3207320244793477428, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
       propertyPath: m_Name
-      value: MainButton
+      value: BackButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3771,7 +3771,7 @@ PrefabInstance:
       objectReference: {fileID: -3027006170170613626, guid: ad5a8dd72996d3d4fbc8538ec739abba, type: 2}
     - target: {fileID: 5546714358705112562, guid: 007bbd68fb666334fa4bf4b2d92e8bfc, type: 3}
       propertyPath: m_Name
-      value: MainButton-Long
+      value: SaveExitButton
       objectReference: {fileID: 0}
     - target: {fileID: 5546714358705112563, guid: 007bbd68fb666334fa4bf4b2d92e8bfc, type: 3}
       propertyPath: m_Pivot.x
@@ -3868,7 +3868,7 @@ PrefabInstance:
     - target: {fileID: 5546714358705112564, guid: 007bbd68fb666334fa4bf4b2d92e8bfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 476466607}
+      objectReference: {fileID: 476466609}
     - target: {fileID: 5546714358705112564, guid: 007bbd68fb666334fa4bf4b2d92e8bfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3879,7 +3879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5546714358705112564, guid: 007bbd68fb666334fa4bf4b2d92e8bfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InputControls, Assembly-CSharp
+      value: MapCreationInputControl, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5546714358705112564, guid: 007bbd68fb666334fa4bf4b2d92e8bfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

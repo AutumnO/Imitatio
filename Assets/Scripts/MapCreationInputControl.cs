@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputControls : MonoBehaviour
+public class MapCreationInputControl : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _panelParent;
@@ -38,7 +38,7 @@ public class InputControls : MonoBehaviour
         _camSize = 5.0f;
         _panSpeed = 0.4f;
         _zoomSpeed = 0.75f;
-        _panDirection = new Vector2 ( 0, 0 );
+        _panDirection = new Vector2(0, 0);
         _isPanning = false;
         _isPanningButton = false;
 
@@ -87,7 +87,7 @@ public class InputControls : MonoBehaviour
         Debug.Log("Save & Exit Clicked");
     }
 
-    
+
     // Helper Functions
     private void ChangeCameraZoom(int direction)
     {
@@ -97,7 +97,7 @@ public class InputControls : MonoBehaviour
             _camSize -= _zoomSpeed;
         else if (direction == 1 && _camSize < 40)
             _camSize += _zoomSpeed;
-        
+
         _camera.orthographicSize = _camSize;
     }
     private void ChangeCameraPosition(char direction)

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 98583593}
   - component: {fileID: 98583596}
   - component: {fileID: 98583595}
+  - component: {fileID: 98583597}
   - component: {fileID: 98583594}
   m_Layer: 5
   m_Name: ScrollSave4
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7924528, g: 0.43734425, b: 0.43734425, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -205,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 98583595}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797665753}
+        m_TargetAssemblyTypeName: MapSavesInputControl, Assembly-CSharp
+        m_MethodName: OnClickOpenScroll
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &98583595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +241,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -1997871077, guid: 05a76b11fafd15c45b27606438e1b384, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -244,6 +257,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98583592}
   m_CullTransparentMesh: 1
+--- !u!114 &98583597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98583592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ed7735d32db042bf5bcdebe2ec05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &143382120
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +280,7 @@ GameObject:
   - component: {fileID: 143382121}
   - component: {fileID: 143382124}
   - component: {fileID: 143382123}
+  - component: {fileID: 143382125}
   - component: {fileID: 143382122}
   m_Layer: 5
   m_Name: ScrollSave2
@@ -305,7 +331,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7924528, g: 0.43734425, b: 0.43734425, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -326,7 +352,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 143382123}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797665753}
+        m_TargetAssemblyTypeName: MapSavesInputControl, Assembly-CSharp
+        m_MethodName: OnClickOpenScroll
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &143382123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +387,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -203331745, guid: 05a76b11fafd15c45b27606438e1b384, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -365,6 +403,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143382120}
   m_CullTransparentMesh: 1
+--- !u!114 &143382125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143382120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ed7735d32db042bf5bcdebe2ec05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &229722348
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +426,7 @@ GameObject:
   - component: {fileID: 229722349}
   - component: {fileID: 229722352}
   - component: {fileID: 229722351}
+  - component: {fileID: 229722353}
   - component: {fileID: 229722350}
   m_Layer: 5
   m_Name: ScrollSave3
@@ -426,7 +477,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7924528, g: 0.43734425, b: 0.43734425, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -447,7 +498,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 229722351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797665753}
+        m_TargetAssemblyTypeName: MapSavesInputControl, Assembly-CSharp
+        m_MethodName: OnClickOpenScroll
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &229722351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +533,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 89205567, guid: 05a76b11fafd15c45b27606438e1b384, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -486,6 +549,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229722348}
   m_CullTransparentMesh: 1
+--- !u!114 &229722353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229722348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ed7735d32db042bf5bcdebe2ec05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &494962061
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +648,7 @@ GameObject:
   - component: {fileID: 792143324}
   - component: {fileID: 792143327}
   - component: {fileID: 792143326}
+  - component: {fileID: 792143328}
   - component: {fileID: 792143325}
   m_Layer: 5
   m_Name: ScrollSave5
@@ -623,7 +699,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7924528, g: 0.43734425, b: 0.43734425, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -644,7 +720,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 792143326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797665753}
+        m_TargetAssemblyTypeName: MapSavesInputControl, Assembly-CSharp
+        m_MethodName: OnClickOpenScroll
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &792143326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +755,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 1162824267, guid: 05a76b11fafd15c45b27606438e1b384, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -683,6 +771,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792143323}
   m_CullTransparentMesh: 1
+--- !u!114 &792143328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792143323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ed7735d32db042bf5bcdebe2ec05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &797982695
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +794,7 @@ GameObject:
   - component: {fileID: 797982696}
   - component: {fileID: 797982699}
   - component: {fileID: 797982698}
+  - component: {fileID: 797982700}
   - component: {fileID: 797982697}
   m_Layer: 5
   m_Name: ArchivesButton
@@ -712,7 +813,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1414573311}
   m_RootOrder: -1
@@ -744,7 +845,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.8773585, g: 0.38487893, b: 0.38487893, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -765,7 +866,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 797982698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797665753}
+        m_TargetAssemblyTypeName: MapSavesInputControl, Assembly-CSharp
+        m_MethodName: OnClickArchives
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &797982698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,7 +901,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -920995386, guid: 56a65ef82824e144c814eca4ea38b63d, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -804,6 +917,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797982695}
   m_CullTransparentMesh: 1
+--- !u!114 &797982700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797982695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ed7735d32db042bf5bcdebe2ec05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &925605682
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +940,7 @@ GameObject:
   - component: {fileID: 925605683}
   - component: {fileID: 925605686}
   - component: {fileID: 925605685}
+  - component: {fileID: 925605687}
   - component: {fileID: 925605684}
   m_Layer: 5
   m_Name: NewMapButton
@@ -833,7 +959,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1414573311}
   m_RootOrder: -1
@@ -865,7 +991,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.8113208, g: 0.27171594, b: 0.27171594, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -886,7 +1012,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 925605685}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797665753}
+        m_TargetAssemblyTypeName: MapSavesInputControl, Assembly-CSharp
+        m_MethodName: OnClickNewMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &925605685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,7 +1047,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 1117218266, guid: 56a65ef82824e144c814eca4ea38b63d, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -925,6 +1063,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925605682}
   m_CullTransparentMesh: 1
+--- !u!114 &925605687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925605682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ed7735d32db042bf5bcdebe2ec05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &977980334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1440,6 +1590,7 @@ GameObject:
   - component: {fileID: 1789226116}
   - component: {fileID: 1789226119}
   - component: {fileID: 1789226118}
+  - component: {fileID: 1789226120}
   - component: {fileID: 1789226117}
   m_Layer: 5
   m_Name: ScrollSave1
@@ -1490,7 +1641,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7924528, g: 0.43734425, b: 0.43734425, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1511,7 +1662,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1789226118}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797665753}
+        m_TargetAssemblyTypeName: MapSavesInputControl, Assembly-CSharp
+        m_MethodName: OnClickOpenScroll
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1789226118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,7 +1697,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 1162824267, guid: 05a76b11fafd15c45b27606438e1b384, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1550,6 +1713,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789226115}
   m_CullTransparentMesh: 1
+--- !u!114 &1789226120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789226115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ed7735d32db042bf5bcdebe2ec05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1797665751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797665752}
+  - component: {fileID: 1797665753}
+  m_Layer: 0
+  m_Name: InputController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797665752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797665751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 312.59543, y: 201.10274, z: -2.0441709}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797665753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797665751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b9170b05e6e9d498e616881de62f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1903532461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +1854,34 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1414573311}
     m_Modifications:
+    - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1797665753}
+    - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MapSavesInputControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207320244793477386, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3207320244793477387, guid: bff573d062b29ab47badb3526854d2e9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1813,7 +2060,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2094359706}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797665753}
+        m_TargetAssemblyTypeName: MapSavesInputControl, Assembly-CSharp
+        m_MethodName: OnClickChangeName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2094359706
 MonoBehaviour:
   m_ObjectHideFlags: 0
