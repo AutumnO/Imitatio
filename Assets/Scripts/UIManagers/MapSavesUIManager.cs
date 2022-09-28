@@ -23,7 +23,19 @@ public class MapSavesUIManager : MonoBehaviour
     }
     public void OnClickNewMap()
     {
-        StartCoroutine(_sceneLoader.LoadSceneAsync(2));
+        _nameChangePopUp = _popUpManager.ActivatePopUp("Input", "Enter the name of your new map...");
+        Button button = _nameChangePopUp.GetComponentsInChildren<Button>()[1];
+        button.onClick.AddListener(CreateNewMap);
+    }
+    public void CreateNewMap()
+    {
+        TMP_InputField field = _nameChangePopUp.GetComponentInChildren<TMP_InputField>();
+        if (field.text.Length > 0)
+        {
+            Debug.Log(field.text);
+            _popUpManager.ClosePopUp();
+            StartCoroutine(_sceneLoader.LoadSceneAsync(2));
+        }
     }
     public void OnClickArchives()
     {
@@ -31,7 +43,7 @@ public class MapSavesUIManager : MonoBehaviour
     }
     public void OnClickChangeName()
     {
-        _nameChangePopUp = _popUpManager.ActivatePopUp("Input", "Change the name of your map save here...");
+        _nameChangePopUp = _popUpManager.ActivatePopUp("Input", "Change the name of your map here...");
         Button button = _nameChangePopUp.GetComponentsInChildren<Button>()[1];
         button.onClick.AddListener(ChangeMapName);
     }
