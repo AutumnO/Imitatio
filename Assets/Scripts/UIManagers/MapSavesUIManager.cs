@@ -2,10 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 public class MapSavesUIManager : MonoBehaviour
 {
     [SerializeField] private SceneLoader _sceneLoader;
+    [SerializeField] private PopUpManager _popUpManager;
+
+    private GameObject _confirmationPopUp;
+    private GameObject _nameChangePopUp;
+
+    public void GetInput()
+    {
+        Debug.Log("suck");
+    }
     public void OnClickBack()
     {
         StartCoroutine(_sceneLoader.LoadSceneAsync(0));
@@ -20,7 +31,15 @@ public class MapSavesUIManager : MonoBehaviour
     }
     public void OnClickChangeName()
     {
-        Debug.Log("ChangeName");
+        _nameChangePopUp = _popUpManager.ActivatePopUp(2);
+        Button button = _nameChangePopUp.GetComponentsInChildren<Button>()[1];
+        button.onClick.AddListener(ChangeMapName);
+    }
+    public void ChangeMapName()
+    {
+        TMP_InputField field = _nameChangePopUp.GetComponentInChildren<TMP_InputField>();
+        Debug.Log(field.text);
+        _popUpManager.ClosePopUp();
     }
     public void OnClickOpenScroll(int scrollNumber)
     {
