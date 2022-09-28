@@ -31,7 +31,7 @@ public class MapSavesUIManager : MonoBehaviour
     }
     public void OnClickChangeName()
     {
-        _nameChangePopUp = _popUpManager.ActivatePopUp(2);
+        _nameChangePopUp = _popUpManager.ActivatePopUp("Input", "Change the name of your map save here...");
         Button button = _nameChangePopUp.GetComponentsInChildren<Button>()[1];
         button.onClick.AddListener(ChangeMapName);
     }
