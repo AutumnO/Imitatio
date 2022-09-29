@@ -8,6 +8,8 @@ public class Tile : MonoBehaviour
     [SerializeField] private Sprite _unselected;
     [SerializeField] private Sprite _selected;
 
+    private bool _tileSelected;
+
     void OnMouseEnter()
     {
         _renderer.sprite = _selected;

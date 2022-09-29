@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MapCreationUIManager : MonoBehaviour
 {
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private Camera _camera;
-    [SerializeField] private Transform _panelParent;
-
-    private Transform _panel1;
-    private Transform _panel2;
-    private Transform _panel3;
-    private Transform _panel4;
+    
     private Vector3 _camPosition;
     private float _camSize;
     private float _panSpeed;
@@ -20,21 +17,17 @@ public class MapCreationUIManager : MonoBehaviour
     private Vector2 _panDirection;
     private bool _isPanning;
     private bool _isPanningButton;
+    private bool _zoomEnabled;
 
     private PlayerInput _playerInput;
 
     // store controls
     private InputAction _panAction;
     private InputAction _zoomAction;
-    private InputAction _handToolAction;
-    private InputAction _hammerToolAction;
-    private InputAction _lightingToolAction;
-    private InputAction _copyToolAction;
-    private InputAction _undoToolAction;
-    private InputAction _redoToolAction;
 
     private void Awake()
     {
+        // set initial values
         _camPosition = new Vector3(0, 0, 0);
         _camSize = 5.0f;
         _panSpeed = 0.4f;
@@ -42,21 +35,12 @@ public class MapCreationUIManager : MonoBehaviour
         _panDirection = new Vector2(0, 0);
         _isPanning = false;
         _isPanningButton = false;
+        _zoomEnabled = true;
 
+        // set up input controls
         _playerInput = GetComponent<PlayerInput>();
         _panAction = _playerInput.actions["Pan"];
         _zoomAction = _playerInput.actions["Zoom"];
-        _handToolAction = _playerInput.actions["HandTool"];
-        _hammerToolAction = _playerInput.actions["HammerTool"];
-        _lightingToolAction = _playerInput.actions["LightingTool"];
-        _copyToolAction = _playerInput.actions["CopyTool"];
-        _undoToolAction = _playerInput.actions["UndoTool"];
-        _redoToolAction = _playerInput.actions["RedoTool"];
-
-        _panel1 = _panelParent.Find("Panel1");
-        _panel2 = _panelParent.Find("Panel2");
-        _panel3 = _panelParent.Find("Panel3");
-        _panel4 = _panelParent.Find("Panel4");
     }
 
     private void FixedUpdate()
@@ -77,7 +61,8 @@ public class MapCreationUIManager : MonoBehaviour
         }
     }
 
-    // MAP CREATION
+
+    // GENERAL BUTTONS
 
     public void OnClickBack()
     {
@@ -90,6 +75,10 @@ public class MapCreationUIManager : MonoBehaviour
 
 
     // Helper Functions
+    public void ZoomEnabler(bool enable)
+    {
+        _zoomEnabled = enable;
+    }
     private void ChangeCameraZoom(int direction)
     {
         _camSize = _camera.orthographicSize;
@@ -127,37 +116,10 @@ public class MapCreationUIManager : MonoBehaviour
         _camera.transform.position = _camPosition;
     }
 
-    // Panel Changes
-    public void OnClickChangePanel(string panelName)
-    {
-        Transform topPanel = _panelParent.Find(panelName);
-        topPanel.SetAsLastSibling();
-        if (panelName == "Panel1")
-        {
-            _panel2.SetSiblingIndex(2);
-            _panel3.SetSiblingIndex(1);
-        }
-        else if (panelName == "Panel2")
-        {
-            _panel1.SetSiblingIndex(2);
-            _panel3.SetSiblingIndex(1);
-        }
-        else if (panelName == "Panel3")
-        {
-            _panel4.SetSiblingIndex(2);
-            _panel2.SetSiblingIndex(1);
-        }
-        else if (panelName == "Panel4")
-        {
-            _panel3.SetSiblingIndex(2);
-            _panel2.SetSiblingIndex(1);
-        }
-    }
-
     // Hotkey Input
     public void Zoom(InputAction.CallbackContext context)
     {
-        if (context.performed == true)
+        if (context.performed && _zoomEnabled)
         {
             float zoom = _zoomAction.ReadValue<float>();
             if (zoom > 0)

@@ -37,8 +37,6 @@ public class GridManager : MonoBehaviour
                 _tiles[new Vector2(x, y)] = tileSpawn;
             }
         }
-
-        //_camera.transform.position = new Vector3((float))
     }
 
     public Tile GetTileAtPosition(Vector2 pos)

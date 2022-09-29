@@ -2181,7 +2181,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneLoader: {fileID: 1797665754}
   _popUpManager: {fileID: 1797665755}
-  but: {fileID: 0}
 --- !u!114 &1797665754
 MonoBehaviour:
   m_ObjectHideFlags: 0
