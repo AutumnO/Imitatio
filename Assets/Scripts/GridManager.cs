@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,16 +9,32 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int _width, _height;
     [SerializeField] private TileRegion _emptyTilePrefab;
     [SerializeField] private ObjectList _objectList;
+    [SerializeField] private Sprite _testSprite;
 
     private Dictionary<Vector2, TileRegion> _tiles;
 
     // object placement
-    public WorldObjectData grabbedObject;
-    public TerrainData grabbedTerrain;
+    private WorldObjectData _grabbedObject;
+    private TerrainData _grabbedTerrain;
 
-    void Start()
+    private void Start()
     {
         GenerateGrid();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            if (hit.collider != null)
+            {
+                PlaceObject(hit.collider.gameObject.GetComponent<TileRegion>());
+            }
+        }
     }
 
     void GenerateGrid()
@@ -33,7 +48,6 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < _height; y++)
             {
                 TileRegion tileSpawn = Instantiate(_emptyTilePrefab, new Vector3(x, y), Quaternion.identity);
-                tileSpawn.gridManager = this;
                 tileSpawn.name = $"Tile {x} {y}";
 
                 _tiles[new Vector2(x, y)] = tileSpawn;
@@ -41,11 +55,22 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public TileRegion GetTileAtPosition(Vector2 pos)
+    public void GrabObject(WorldObjectData data)
     {
-        if (_tiles.TryGetValue(pos, out TileRegion returnedTile))
-            return returnedTile;
-        return null;
+        _grabbedObject = data;
+        _grabbedTerrain = null;
+    }
+    public void GrabTerrain(TerrainData data)
+    {
+        _grabbedTerrain = data;
+        _grabbedObject = null;
+    }
+    public void PlaceObject(TileRegion tile)
+    {
+        if (_grabbedObject != null)
+            tile.PlaceObject(_grabbedObject);
+        else if (_grabbedTerrain != null)
+            tile.PlaceTerrain(_grabbedTerrain);
     }
 
     public TerrainData[] GetTerrainTiles()
@@ -60,19 +85,5 @@ public class GridManager : MonoBehaviour
             return _objectList.buildings;
         else
             return _objectList.other;
-    }
-
-    public void GrabObject(WorldObjectData data)
-    {
-        grabbedObject = data;
-    }
-    public void GrabTerrain(TerrainData data)
-    {
-        grabbedTerrain = data;
-    }
-
-    public void PlaceObject()
-    {
-
     }
 }

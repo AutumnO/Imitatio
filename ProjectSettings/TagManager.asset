@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Terrain
+    uniqueID: 3036633267
+    locked: 0
+  - name: WorldObjects
+    uniqueID: 3318208225
+    locked: 0
   - name: Overlay
     uniqueID: 1280647215
     locked: 0

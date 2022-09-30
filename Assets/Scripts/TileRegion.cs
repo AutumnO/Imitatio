@@ -7,11 +7,10 @@ public class TileRegion : MonoBehaviour
     [SerializeField] private Sprite _unselected;
     [SerializeField] private Sprite _selected;
 
-    public GridManager gridManager;
     private SpriteRenderer _renderer;
     // children GameObjects
-    private GameObject _terrain;
-    private GameObject _prop;
+    private SpriteRenderer _terrain;
+    private SpriteRenderer _prop;
     private TerrainData _terrainData;
     private WorldObjectData _propData;
 
@@ -22,33 +21,28 @@ public class TileRegion : MonoBehaviour
         // check if tile is set up correctly and get terrain and prop objects
         if (transform.childCount >= 2)
         {
-            _terrain = transform.GetChild(0).gameObject;
-            _prop = transform.GetChild(1).gameObject;
+            _terrain = GetComponentsInChildren<SpriteRenderer>()[1];
+            _prop = GetComponentsInChildren<SpriteRenderer>()[2];
         }
         else
             Debug.Log("Tile lacks correct amount of children!!");
         
     }
 
-    public void PlaceObject()
+    public void PlaceObject(WorldObjectData obj)
     {
-        // Not getting here
-        Debug.Log("Placing Object");
-        if (gridManager.grabbedTerrain != null)
-        {
-            _terrainData = gridManager.grabbedTerrain;
-            _terrain.GetComponent<SpriteRenderer>().sprite = _terrainData.modelTile;
-        }
-        else if (gridManager.grabbedObject != null)
-        {
-            _propData = gridManager.grabbedObject;
-            _prop.GetComponent<SpriteRenderer>().sprite = _propData.sprite;
-        }
+        _propData = obj;
+        _prop.sprite = _propData.sprite;
+    }
+    public void PlaceTerrain(TerrainData obj)
+    {
+        _terrainData = obj;
+        _terrain.sprite = _terrainData.modelTile;
     }
 
     void OnMouseEnter()
     {
-        _renderer.sprite = _selected;
+        _renderer.sprite = null;
     }
     void OnMouseExit()
     {
