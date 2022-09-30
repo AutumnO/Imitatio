@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5e72138a0c39e44b1cd40692fdbb45, type: 3}
+  m_Name: ObjectList
+  m_EditorClassIdentifier: 
+  terrainTiles:
+  - {fileID: 11400000, guid: 31c69dafd6525ed4b8f5b8b8299d7ce3, type: 2}
+  - {fileID: 11400000, guid: a2624d5d2e4f6904dbc584ff8f65f2d1, type: 2}
+  mapDecor:
+  - {fileID: 11400000, guid: 53877b659b0e3ea4786cc1a4cc0f6f2a, type: 2}
+  - {fileID: 11400000, guid: 5d5afa60f368fae47b84762eef7fca5f, type: 2}
+  - {fileID: 11400000, guid: da304964bb46def47b275e7ac20dc690, type: 2}
+  - {fileID: 11400000, guid: 8fb63be753d82484ab30133766aae257, type: 2}
+  buildings:
+  - {fileID: 11400000, guid: df6829994537a6746a3e319488067080, type: 2}
+  - {fileID: 11400000, guid: f94d0bcaf17abee47b5a75747caec0d8, type: 2}
+  - {fileID: 11400000, guid: 3c4edc65c54e29d49aa3ce7fc5b5741d, type: 2}
+  - {fileID: 11400000, guid: 21b146ed5fe0844489de9cdfe7b7a4b2, type: 2}
+  other: []
