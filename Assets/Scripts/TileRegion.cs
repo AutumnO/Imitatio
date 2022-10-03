@@ -29,15 +29,17 @@ public class TileRegion : MonoBehaviour
         
     }
 
-    public void PlaceObject(WorldObjectData obj)
+    public void PlaceObject(WorldObjectData obj, Transform loc)
     {
         _propData = obj;
         _prop.sprite = _propData.sprite;
+        _prop.transform.position = loc.position;
     }
-    public void PlaceTerrain(TerrainData obj)
+    public void PlaceTerrain(TerrainData obj, Transform loc)
     {
         _terrainData = obj;
         _terrain.sprite = _terrainData.modelTile;
+        _terrain.transform.position = loc.position;
     }
 
     void OnMouseEnter()

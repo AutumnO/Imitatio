@@ -14,3 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 1505553117, guid: 936373eeb13b0004bb60427a24cc2175, type: 3}
   type: 1
+  rectSize: {x: 11, y: 9}
+  tilesOutsideFootprint:
+  - serializedVersion: 2
+    x: 0
+    y: 0
+    width: 6
+    height: 4
