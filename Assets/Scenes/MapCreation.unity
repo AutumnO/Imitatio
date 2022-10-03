@@ -5580,8 +5580,8 @@ MonoBehaviour:
   _width: 10
   _height: 6
   _emptyTilePrefab: {fileID: 9159389832587719852, guid: 52d241725dab9e849859970c424928f7, type: 3}
+  _mouseAttachment: {fileID: 6864351006349285991, guid: e94108817918651459881561875fd74c, type: 3}
   _objectList: {fileID: 11400000, guid: 8f454f13d2bdda149bba5d9e786122bd, type: 2}
-  _testSprite: {fileID: 133109818, guid: f49ec3b5fa3e52a4690844fbb1527a3f, type: 3}
 --- !u!1 &2120631704
 GameObject:
   m_ObjectHideFlags: 0

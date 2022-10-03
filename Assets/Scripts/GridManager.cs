@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GridManager : MonoBehaviour
 {
@@ -8,13 +9,14 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Transform _camera;
     [SerializeField] private int _width, _height;
     [SerializeField] private TileRegion _emptyTilePrefab;
+    [SerializeField] private GameObject _mouseAttachment;
     [SerializeField] private ObjectList _objectList;
-    [SerializeField] private Sprite _testSprite;
 
     private Dictionary<Vector2, TileRegion> _tiles;
 
     // object placement
-    private WorldObjectData _grabbedObject;
+    private GameObject _grabbedObj;
+    private WorldObjectData _grabbedProp;
     private TerrainData _grabbedTerrain;
 
     private void Start()
@@ -24,6 +26,12 @@ public class GridManager : MonoBehaviour
 
     private void Update()
     {
+        if (_grabbedObj != null)
+        {
+            Vector3 mousePos = Input.mousePosition;
+
+            _grabbedObj.transform.position = new Vector2(mousePos.x + 20, mousePos.y - 20);
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -55,20 +63,30 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public void GrabObject(WorldObjectData data)
+    public void GrabProp(WorldObjectData data)
     {
-        _grabbedObject = data;
+        _grabbedProp = data;
         _grabbedTerrain = null;
+        GrabbedObjectHandler(data.sprite);
     }
     public void GrabTerrain(TerrainData data)
     {
         _grabbedTerrain = data;
-        _grabbedObject = null;
+        _grabbedProp = null;
+        GrabbedObjectHandler(data.modelTile);
+    }
+    private void GrabbedObjectHandler(Sprite sprite)
+    {
+        Destroy(_grabbedObj);
+        _grabbedObj = Instantiate(_mouseAttachment);
+        _grabbedObj.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        _grabbedObj.GetComponent<Image>().sprite = sprite;
+        _grabbedObj.GetComponent<Image>().preserveAspect = true;
     }
     public void PlaceObject(TileRegion tile)
     {
-        if (_grabbedObject != null)
-            tile.PlaceObject(_grabbedObject);
+        if (_grabbedProp != null)
+            tile.PlaceObject(_grabbedProp);
         else if (_grabbedTerrain != null)
             tile.PlaceTerrain(_grabbedTerrain);
     }
