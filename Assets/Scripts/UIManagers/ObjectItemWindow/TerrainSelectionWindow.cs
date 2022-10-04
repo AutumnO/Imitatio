@@ -18,6 +18,6 @@ public class TerrainSelectionWindow : ObjectSelectionWindow
     }
     public override void SetListener(EventTrigger.Entry entry, int dataIndex)
     {
-        entry.callback.AddListener((func) => { _gridManager.GrabTerrain(_terrainTiles[dataIndex]); });
+        entry.callback.AddListener((func) => { _gridManager.GrabObject(_terrainTiles[dataIndex]); });
     }
 }

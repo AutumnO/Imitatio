@@ -84,6 +84,6 @@ public class ObjectSelectionWindow : MonoBehaviour
     }
     public virtual void SetListener(EventTrigger.Entry entry, int dataIndex)
     {
-        entry.callback.AddListener((func) => { _gridManager.GrabProp(_worldObjects[dataIndex]); });
+        entry.callback.AddListener((func) => { _gridManager.GrabObject(_worldObjects[dataIndex]); });
     }
 }

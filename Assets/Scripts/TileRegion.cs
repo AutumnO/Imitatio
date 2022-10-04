@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class TileRegion : MonoBehaviour
 {
+    // Prefab
     [SerializeField] private Sprite _unselected;
-    [SerializeField] private Sprite _selected;
 
     private SpriteRenderer _renderer;
-    // children GameObjects
+
+    // Terrain and Prop Objects (children)
     private SpriteRenderer _terrain;
     private SpriteRenderer _prop;
     private TerrainData _terrainData;
     private WorldObjectData _propData;
+    private TileRegion _propOrigin;
 
     private void Awake()
     {
@@ -26,20 +28,30 @@ public class TileRegion : MonoBehaviour
         }
         else
             Debug.Log("Tile lacks correct amount of children!!");
-        
+
+        _propOrigin = this;
     }
 
-    public void PlaceObject(WorldObjectData obj, Transform loc)
+    public void PlaceObject(WorldObjectData obj, Transform loc, TileRegion propOrigin)
     {
         _propData = obj;
         _prop.sprite = _propData.sprite;
         _prop.transform.position = loc.position;
+        _propOrigin = propOrigin;
     }
-    public void PlaceTerrain(TerrainData obj, Transform loc)
+    public void PlaceObject(TerrainData obj, Transform loc)
     {
         _terrainData = obj;
         _terrain.sprite = _terrainData.modelTile;
         _terrain.transform.position = loc.position;
+        _propOrigin = this;
+    }
+    public bool HasObject()
+    {
+        if (_propData == null)
+            return false;
+        else
+            return true;
     }
 
     void OnMouseEnter()
