@@ -2,13 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TerrainSprites
-{
-    middle,
-    bottom, left, top, right,
-    bottomLeft, topLeft, topRight, bottomRight
-}
-
 public class TerrainTile : MonoBehaviour
 {
     [SerializeField] GameObject spritePreFab;
@@ -22,6 +15,7 @@ public class TerrainTile : MonoBehaviour
     {
         _data = newData;
         GetComponent<SpriteRenderer>().sprite = newData.mainTile;
+        Debug.Log(newData.name);
     }
 
     public void SetSprites(TileSprite[] sprites)

@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -28,6 +29,7 @@ public class TerrainFactory
         // make sure sprite atlas contains the right amount of sprites
         string tileSheetPath = AssetDatabase.GetAssetPath(objList.tileSheet);
         Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(tileSheetPath).OfType<Sprite>().ToArray();
+        Array.Sort(sprites, CompareSpriteNames);
         if (sprites.Length % 32 != 0 || sprites.Length / 32 != objList.terrainDetails.Length)
             Debug.LogError($"Tile Sprite Atlas contains wrong # of sprites ({sprites.Length})");
         objList.terrainTiles = new TerrainData[objList.terrainDetails.Length];
@@ -75,5 +77,18 @@ public class TerrainFactory
             result[i] = spriteSet[(index * 32) + i];
         }
         return result;
+    }
+
+    // order highest to lowest, higher indices indicate less dominance
+    private static int CompareSpriteNames(Sprite x, Sprite y)
+    {
+        int xNum = -1;
+        int yNum = -1;
+        Int32.TryParse(x.name.Split('_')[1], out xNum);
+        Int32.TryParse(y.name.Split('_')[1], out yNum);
+        if (xNum == -1 || yNum == -1)
+            Debug.LogError("Issue in CompareSpriteNames in TerrainFactory");
+
+        return xNum.CompareTo(yNum);
     }
 }
