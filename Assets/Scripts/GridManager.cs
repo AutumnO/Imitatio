@@ -113,7 +113,7 @@ public class GridManager : MonoBehaviour
     {
         _grabbedTerrain = data;
         _grabbedProp = null;
-        GrabbedObjectHandler(data.modelTile);
+        GrabbedObjectHandler(data.mainTile);
     }
     private void GrabbedObjectHandler(Sprite sprite)
     {

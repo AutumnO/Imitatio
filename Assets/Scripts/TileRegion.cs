@@ -10,11 +10,11 @@ public class TileRegion : MonoBehaviour
     private SpriteRenderer _renderer;
 
     // Terrain and Prop Objects (children)
-    private SpriteRenderer _terrain;
     private SpriteRenderer _prop;
-    private TerrainData _terrainData;
     private WorldObjectData _propData;
     private TileRegion _propOrigin;
+
+    private TerrainTile _terrainTile;
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class TileRegion : MonoBehaviour
         // check if tile is set up correctly and get terrain and prop objects
         if (transform.childCount >= 2)
         {
-            _terrain = GetComponentsInChildren<SpriteRenderer>()[1];
+            _terrainTile = GetComponentInChildren<TerrainTile>();
             _prop = GetComponentsInChildren<SpriteRenderer>()[2];
         }
         else
@@ -39,11 +39,11 @@ public class TileRegion : MonoBehaviour
         _prop.transform.position = loc.position;
         _propOrigin = propOrigin;
     }
-    public void PlaceObject(TerrainData obj, Transform loc)
+    public void PlaceObject(TerrainData data, Transform loc)
     {
-        _terrainData = obj;
-        _terrain.sprite = _terrainData.modelTile;
-        _terrain.transform.position = loc.position;
+        _terrainTile.data = data;
+        _terrainTile.SetSprite(data.mainTile, TerrainSprites.middle);
+        _terrainTile.transform.position = loc.position; //???
         _propOrigin = this;
     }
     public bool HasObject()
@@ -53,7 +53,10 @@ public class TileRegion : MonoBehaviour
         else
             return true;
     }
-
+    public TerrainData GetTerrainData()
+    {
+        return _terrainTile.data;
+    }
     void OnMouseEnter()
     {
         _renderer.sprite = null;

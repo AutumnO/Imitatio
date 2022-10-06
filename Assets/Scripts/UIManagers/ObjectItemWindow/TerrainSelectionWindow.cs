@@ -14,7 +14,7 @@ public class TerrainSelectionWindow : ObjectSelectionWindow
     }
     public override Sprite GetWindowSprite(int index)
     {
-        return _terrainTiles[index].modelTile;
+        return _terrainTiles[index].mainTile;
     }
     public override void SetListener(EventTrigger.Entry entry, int dataIndex)
     {

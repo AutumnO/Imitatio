@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ObjectList
   m_EditorClassIdentifier: 
   terrainTiles:
-  - {fileID: 11400000, guid: 31c69dafd6525ed4b8f5b8b8299d7ce3, type: 2}
-  - {fileID: 11400000, guid: a2624d5d2e4f6904dbc584ff8f65f2d1, type: 2}
+  - {fileID: 11400000, guid: 36a0ead7453322a46bd09efe1f8652a2, type: 2}
+  - {fileID: 11400000, guid: e461b0736d14b84468a39e5772ff7211, type: 2}
   mapDecor:
   - {fileID: 11400000, guid: 53877b659b0e3ea4786cc1a4cc0f6f2a, type: 2}
   - {fileID: 11400000, guid: 5d5afa60f368fae47b84762eef7fca5f, type: 2}
@@ -26,3 +26,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c4edc65c54e29d49aa3ce7fc5b5741d, type: 2}
   - {fileID: 11400000, guid: 21b146ed5fe0844489de9cdfe7b7a4b2, type: 2}
   other: []
+  tileSheet: {fileID: 2800000, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  terrainNames:
+  - name: Ground
+    movementModifier: 1
+  - name: Water
+    movementModifier: 0

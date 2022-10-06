@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c834829746909040b376c6dba503c09, type: 3}
+  m_Name: Ground
+  m_EditorClassIdentifier: 
+  mainTile: {fileID: 566445125, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  sides:
+  - {fileID: 1640864444, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1037265762, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1031228262, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -516285859, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -790101953, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 862644816, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1911828944, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -139753824, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -109712734, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1129644353, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 2074837294, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1765975837, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -136645715, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1800295664, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 244016913, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 809149277, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  corners:
+  - {fileID: 1640864444, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1856016133, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 623813991, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -347935266, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1625374647, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1273751187, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -233824249, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 434464119, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1338432439, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1528799108, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1142497888, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 375270047, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 441755492, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1259823452, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 633470304, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1588919436, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  movementModifier: 1
+  dominanceIndex: 0
