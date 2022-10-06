@@ -1,95 +1,140 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public static class RelationalTiles
 {
-    public static void SetTileSprites(TileRegion newTile, TileRegion[] otherTiles)
+    public static void SetTileSprites(TileRegion[] surroundingTiles, TerrainData defaultTerrain)
     {
         /*
-            24 items to check
-            
-            
-            CHECK LEFT & TOP SIDE
-                if at map edge: ????
-                if left tile exists && top tile exists
-                    if outer tile is dominant
-                        outer tile's right side = null
-                        inner tile's left side = outer tile
-                        (if bottom left tile exists && bottom tile exists)
-                        if bottom left tile is dominant over left tile AND
-                            bottom left tile is dominant over bottom tile
-                            inner tile's bottom left corner = bottom left tile
-                        else inner tile's bottom left corner = null
-                        (if top left tile exists && top tile exists)
-                        if top left tile is dominant over left tile AND
-                            top left tile is dominant over top tile
-                            inner tile's top left corner = top left tile
-                        else inner tile's top left corner = null
+            Check 24 items
+                sort dominance after, first check the tiles that dominate individual tiles
+            side = 3210
+            corner = 3210
 
-                    if inner tile is dominant
-                        left tile's right side = inner tile
-                        inner tile's left side = null
-                        (if bottom left tile exists && bottom tile exists)
-                        if inner tile is dominant over bottom left tile AND
-                            inner tile is dominant over bottom tile
-                            left tile's bottom right corner = null
-                            bottom left tile's top right corner = inner tile
-                            bottom tile's top side = inner tile
-                        (if top left tile exists && top tile exists)
-                        if inner tile is dominant over top left tile AND
-                            inner tile is dominant over top tile
-                            left tile's top right corner = null
-                            top left tile's bottom right corner = inner tile
-                            top tile's bottom side = inner tile
-                    if outer and inner are the same terrain
+            c0              s1              c1
 
-                if left tile exists but top tile doesn't exist
-                    inner tile's left side = void
-                    inner tile's bottom left corner = void
-                    inner tile's top left corner = void
+                    t0  t1  t2  t3  t4
+                    t5  t6  t7  t8  t9
+            s0      t10 t11 t12 t13 t14     s2
+                    t15 t16 t17 t18 t19
+                    t20 t21 t22 t23 t24
 
-                if left tile doesn't exist but top tile does exist
-
-                if left tile doesn't exist and top tile doesn't exist
-                    
-        
-            CHECK BOTTOM LEFT
-                
-            CHECK TOP LEFT
-            CHECK TOP
-                if a tile exists there
-                    if outer tile is dominant
-                    if inner tile is dominant
-                    if inner and outer tiles are the same
-                if a tile doesn't exist there
-                    inner tile's top side = void
-                    inner tile's top left corner = void
-                    inner tile's top right corner = void
-            CHECK RIGHT SIDE
-            CHECK TOP RIGHT
-            CHECK BOTTOM RIGHT
-            CHECK BOTTOM
+            c3              s3              c2
         */
+
+        // get list of terrain data for easy access, replace null tiles with default terrain data
+        TerrainData[] outer = new TerrainData[surroundingTiles.Length];
+        for (int i = 0; i < surroundingTiles.Length; i++)
+        {
+            if (surroundingTiles[i] != null)
+                outer[i] = surroundingTiles[i].terrainTile.GetData();
+            else
+                outer[i] = defaultTerrain;
+        }
+
+        // for each of the existing 9 interior tiles, recalculate and reset sprites
+        TerrainData[] currOuter;
+        for (int i = 6; i < 18; i++)
+        {
+            if (i != 9 && i != 10 && i != 14 && i != 15)
+            {
+                if (surroundingTiles[i] != null)
+                {
+                    currOuter = new TerrainData[] { outer[i - 6], outer[i - 5], outer[i - 4],
+                                                    outer[i + 1], outer[i + 6], outer[i + 5],
+                                                    outer[i + 4], outer[i - 1]};
+                    surroundingTiles[i].terrainTile.SetSprites(TileSpriteHelper(currOuter, outer[i]));
+                }
+            }
+        }
+
+    }
+
+    // all terrain data must be defaulted to void if tile is null before calling function
+    private static TileSprite[] TileSpriteHelper(TerrainData[] tiles, TerrainData center)
+    {
+        // build dictionary for each terrain type that borders the center tile
+        // key: terrain type, value: side binary, corner binary
+        Dictionary<TerrainData, (int, int)> spriteDict = new Dictionary<TerrainData, (int, int)>();
+        (int, int) currIndices;
+        for (int i = 0; i < 8; i++)
+        {
+            if (tiles[i].dominanceIndex < center.dominanceIndex)
+            {
+                if (spriteDict.TryGetValue(tiles[i], out currIndices))
+                    spriteDict[tiles[i]] = GetNewIndices(i, spriteDict[tiles[i]]);
+                else
+                    spriteDict[tiles[i]] = GetNewIndices(i, (0b0000, 0b0000));
+            }
+        }
+
+        // put terrains in order from least to most dominant (high to low dominance index)
+        List<TileSprite> result = new List<TileSprite>();
+        foreach (KeyValuePair<TerrainData, (int, int)> pair in spriteDict)
+            result.Add(new TileSprite(pair.Key, pair.Value));
+        result.Sort(CompareDominanceIndices);
+
+        return result.ToArray();
+    }
+
+    // determine changes to the side or edge binary literals based on the orientation of the tile
+    // in relation to the center
+    private static (int, int) GetNewIndices (int index, (int, int) prevIndices)
+    {
+        switch (index)
+        {
+            case 0:
+                prevIndices.Item2 += 0b0001;
+                break;
+            case 1:
+                prevIndices.Item1 += 0b0010;
+                break;
+            case 2:
+                prevIndices.Item2 += 0b0010;
+                break;
+            case 3:
+                prevIndices.Item1 += 0b0100;
+                break;
+            case 4:
+                prevIndices.Item2 += 0b0100;
+                break;
+            case 5:
+                prevIndices.Item1 += 0b1000;
+                break;
+            case 6:
+                prevIndices.Item2 += 0b1000;
+                break;
+            case 7:
+                prevIndices.Item1 += 0b0001;
+                break;
+        }
+        return prevIndices;
+    }
+
+    // order highest to lowest, higher indices indicate less dominance
+    private static int CompareDominanceIndices (TileSprite x, TileSprite y)
+    {
+        if (x.terrain.dominanceIndex < y.terrain.dominanceIndex)
+            return 1;
+        else if (x.terrain.dominanceIndex > y.terrain.dominanceIndex)
+            return -1;
+        else
+            return 0;
     }
 }
 
-public enum TileType
+public struct TileSprite
 {
-    isolated, filled, fourCorners,
+    public int sideIndex;
+    public int cornerIndex;
+    public TerrainData terrain;
 
-    oneSideBottom, oneSideLeft, oneSideTop, oneSideRight,
-    twoAdjacentSidesTopLeft, twoAdjacentSidesTopRight, twoAdjacentSidesBottomLeft, twoAdjacentSidesBottomRight,
-    twoSidesRightLeft, twoSidesTopBottom,
-    threeAdjacentSidesTop, threeAdjacentSidesBottom, threeAdjacentSidesLeft, threeAdjacentSidesRight,
-
-    oneCornerTopLeft, oneCornerTopRight, oneCornerBottomLeft, oneCornerBottomRight,
-    twoCornersTop, twoCornersRight, twoCornersBottom, twoCornersLeft,
-    twoCornersOppositeTopLeft, twoCornersOppositeTopRight,
-    threeCornersTopLeft, threeCornersTopRight, threeCornersBottomLeft, threeCornersBottomRight,
-
-    oneSideOneCornerLeftBottomRight, oneSideOneCornerLeftTopRight, oneSideOneCornerRightBottomLeft, oneSideOneCornerRightTopLeft,
-    oneSideOneCornerTopBottomRight, oneSideOneCornerTopBottomLeft, oneSideOneCornerBottomTopRight, oneSideOneCornerBottomTopLeft,
-    oneSideTwoCornersTop, oneSideTwoCornersRight, oneSideTwoCornersBottom, oneSideTwoCornersLeft,
-    twoSidesOneCornerBottomRight, twoSidesOneCornerBottomLeft, twoSidesOneCornerTopRight, twoSidesOneCornerTopLeft
+    public TileSprite (TerrainData data, (int, int) indices)
+    {
+        sideIndex = indices.Item1;
+        cornerIndex = indices.Item2;
+        terrain = data;
+    }
 }

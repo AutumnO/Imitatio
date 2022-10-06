@@ -14,7 +14,8 @@ public class TileRegion : MonoBehaviour
     private WorldObjectData _propData;
     private TileRegion _propOrigin;
 
-    private TerrainTile _terrainTile;
+    public TerrainTile terrainTile;
+    private TerrainData _defaultTerrain;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class TileRegion : MonoBehaviour
         // check if tile is set up correctly and get terrain and prop objects
         if (transform.childCount >= 2)
         {
-            _terrainTile = GetComponentInChildren<TerrainTile>();
+            terrainTile = GetComponentInChildren<TerrainTile>();
             _prop = GetComponentsInChildren<SpriteRenderer>()[2];
         }
         else
@@ -32,6 +33,11 @@ public class TileRegion : MonoBehaviour
         _propOrigin = this;
     }
 
+    public void SetDefaultTerrain(TerrainData defaultTerrain)
+    {
+        terrainTile.SetTerrain(defaultTerrain);
+        _defaultTerrain = defaultTerrain;
+    }
     public void PlaceObject(WorldObjectData obj, Transform loc, TileRegion propOrigin)
     {
         _propData = obj;
@@ -39,12 +45,12 @@ public class TileRegion : MonoBehaviour
         _prop.transform.position = loc.position;
         _propOrigin = propOrigin;
     }
-    public void PlaceObject(TerrainData data, Transform loc)
+    public void PlaceObject(TerrainData data, Transform loc, TileRegion[] surrounding5x5Grid)
     {
-        _terrainTile.data = data;
-        _terrainTile.SetSprite(data.mainTile, TerrainSprites.middle);
-        _terrainTile.transform.position = loc.position; //???
+        terrainTile.SetTerrain(data);
+        terrainTile.transform.position = loc.position;
         _propOrigin = this;
+        RelationalTiles.SetTileSprites(surrounding5x5Grid, _defaultTerrain);
     }
     public bool HasObject()
     {
@@ -53,16 +59,12 @@ public class TileRegion : MonoBehaviour
         else
             return true;
     }
-    public TerrainData GetTerrainData()
-    {
-        return _terrainTile.data;
-    }
     void OnMouseEnter()
     {
         _renderer.sprite = null;
     }
     void OnMouseExit()
     {
-        _renderer.sprite = _unselected;
+        //_renderer.sprite = _unselected;
     }
 }

@@ -27,8 +27,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 21b146ed5fe0844489de9cdfe7b7a4b2, type: 2}
   other: []
   tileSheet: {fileID: 2800000, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
-  terrainNames:
-  - name: Ground
+  terrainDetails:
+  - name: Void
+    movementModifier: 0
+  - name: Grass
     movementModifier: 1
   - name: Water
     movementModifier: 0

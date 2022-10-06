@@ -11,13 +11,32 @@ public enum TerrainSprites
 
 public class TerrainTile : MonoBehaviour
 {
-    public TerrainData data;
+    [SerializeField] GameObject spritePreFab;
+    
+    private TerrainData _data;
 
-    public void SetSprite(Sprite sprite, TerrainSprites section)
+    public TerrainData GetData()
+    { return _data; } 
+
+    public void SetTerrain(TerrainData newData)
     {
-        if (section == TerrainSprites.middle)
-            GetComponent<SpriteRenderer>().sprite = sprite;
-        else
-            transform.Find(section.ToString()).gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+        _data = newData;
+        GetComponent<SpriteRenderer>().sprite = newData.mainTile;
+    }
+
+    public void SetSprites(TileSprite[] sprites)
+    {
+        // destroy existing children
+        foreach (Transform child in transform)
+            Destroy(child.gameObject);
+
+        // create new children sprites
+        foreach (TileSprite s in sprites)
+        {
+            GameObject sideObj = Instantiate(spritePreFab, transform);
+            sideObj.GetComponent<SpriteRenderer>().sprite = s.terrain.sides[s.sideIndex];
+            GameObject cornerObj = Instantiate(spritePreFab, transform);
+            cornerObj.GetComponent<SpriteRenderer>().sprite = s.terrain.corners[s.cornerIndex];
+        }
     }
 }

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c834829746909040b376c6dba503c09, type: 3}
+  m_Name: Grass
+  m_EditorClassIdentifier: 
+  mainTile: {fileID: 1765643153, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  sides:
+  - {fileID: -2018447399, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 362344700, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 372931263, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 475858289, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -19799956, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -89478560, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1385547676, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1265111241, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -243454057, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -26364929, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -851141435, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -929799436, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -303042853, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1153159435, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1939772210, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -203479104, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  corners:
+  - {fileID: -2018447399, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -468120677, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -582418725, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1435827841, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 493189661, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -613632971, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -238435575, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -1703461540, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1802728983, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -438886404, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1477748332, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 2086315630, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -809437040, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1003315149, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: 1759979219, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  - {fileID: -127055480, guid: f19928e421f25af458c12f67a5d211f6, type: 3}
+  movementModifier: 1
+  dominanceIndex: 1

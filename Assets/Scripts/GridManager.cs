@@ -96,6 +96,7 @@ public class GridManager : MonoBehaviour
             {
                 TileRegion tileSpawn = Instantiate(_emptyTilePrefab, new Vector3(x, y), Quaternion.identity);
                 tileSpawn.name = $"Tile {x} {y}";
+                tileSpawn.SetDefaultTerrain(_objectList.terrainTiles[0]);
 
                 _tiles[tileSpawn] = new Vector2(x, y);
                 _tilePositions[new Vector2(x, y)] = tileSpawn;
@@ -176,7 +177,10 @@ public class GridManager : MonoBehaviour
             }
         }
         else if (_grabbedTerrain != null && originTile != null)
-            originTile.PlaceObject(_grabbedTerrain, _grabbedObjPreview.transform);
+        {
+            TileRegion[] surroundingTiles = GetSurroundingTiles(originTile);
+            originTile.PlaceObject(_grabbedTerrain, _grabbedObjPreview.transform, surroundingTiles);
+        }
     }
     private List<TileRegion> GetAffectedTiles(TileRegion tile, WorldObjectData obj)
     {
@@ -205,6 +209,31 @@ public class GridManager : MonoBehaviour
         }
 
         return affectedTiles;
+    }
+    public TileRegion[] GetSurroundingTiles(TileRegion centerTile)
+    {
+        /* 
+            (t12 is centerTile)
+            t0  t1  t2  t3  t4
+            t5  t6  t7  t8  t9
+            t10 t11 t12 t13 t14
+            t15 t16 t17 t18 t19
+            t20 t21 t22 t23 t24
+        */
+
+        Vector2 center = _tiles[centerTile];
+        TileRegion[] result = new TileRegion[25];
+        int index = 0;
+        for (int y = 2; y >= -2; y--)
+        {
+            for (int x = -2; x <= 2; x++)
+            {
+                _tilePositions.TryGetValue(new Vector2(center.x + x, center.y + y), out result[index]);
+                index++;
+            } 
+        }
+
+        return result;
     }
 
     public TerrainData[] GetTerrainTiles()
