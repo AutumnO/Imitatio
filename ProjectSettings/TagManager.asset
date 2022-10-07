@@ -44,6 +44,9 @@ TagManager:
   - name: Terrain
     uniqueID: 3036633267
     locked: 0
+  - name: TerrainTransitions
+    uniqueID: 1947127299
+    locked: 0
   - name: WorldObjects
     uniqueID: 3318208225
     locked: 0

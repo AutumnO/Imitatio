@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -2214,8 +2214,8 @@ TextureImporter:
       (PH)TileSet_69: 2003877650
       (PH)TileSet_87: 23792299
       (PH)TileSet_55: -1703461540
-      (PH)TileSet_25: -354318787
       (PH)TileSet_83: -1716677042
+      (PH)TileSet_25: -354318787
       (PH)TileSet_9: 10714684
       (PH)TileSet_1: 1254041156
       (PH)TileSet_49: -468120677

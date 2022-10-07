@@ -228,6 +228,7 @@ public class GridManager : MonoBehaviour
         {
             for (int x = -2; x <= 2; x++)
             {
+                result[index] = null;
                 _tilePositions.TryGetValue(new Vector2(center.x + x, center.y + y), out result[index]);
                 index++;
             } 

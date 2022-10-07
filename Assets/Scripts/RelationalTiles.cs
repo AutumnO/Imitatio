@@ -25,27 +25,27 @@ public static class RelationalTiles
         */
 
         // get list of terrain data for easy access, replace null tiles with default terrain data
-        TerrainData[] outer = new TerrainData[surroundingTiles.Length];
+        TerrainData[] terrainList = new TerrainData[surroundingTiles.Length];
         for (int i = 0; i < surroundingTiles.Length; i++)
         {
             if (surroundingTiles[i] != null)
-                outer[i] = surroundingTiles[i].terrainTile.GetData();
+                terrainList[i] = surroundingTiles[i].terrainTile.GetData();
             else
-                outer[i] = defaultTerrain;
+                terrainList[i] = defaultTerrain;
         }
 
         // for each of the existing 9 interior tiles, recalculate and reset sprites
         TerrainData[] currOuter;
-        for (int i = 6; i < 18; i++)
+        for (int i = 6; i < 19; i++)
         {
             if (i != 9 && i != 10 && i != 14 && i != 15)
             {
                 if (surroundingTiles[i] != null)
                 {
-                    currOuter = new TerrainData[] { outer[i - 6], outer[i - 5], outer[i - 4],
-                                                    outer[i + 1], outer[i + 6], outer[i + 5],
-                                                    outer[i + 4], outer[i - 1]};
-                    surroundingTiles[i].terrainTile.SetSprites(TileSpriteHelper(currOuter, outer[i]));
+                    currOuter = new TerrainData[] { terrainList[i - 6], terrainList[i - 5], terrainList[i - 4],
+                                                    terrainList[i + 1], terrainList[i + 6], terrainList[i + 5],
+                                                    terrainList[i + 4], terrainList[i - 1]};
+                    surroundingTiles[i].terrainTile.SetSprites(TileSpriteHelper(currOuter, terrainList[i]));
                 }
             }
         }

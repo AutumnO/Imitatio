@@ -15,7 +15,6 @@ public class TerrainTile : MonoBehaviour
     {
         _data = newData;
         GetComponent<SpriteRenderer>().sprite = newData.mainTile;
-        Debug.Log(newData.name);
     }
 
     public void SetSprites(TileSprite[] sprites)
@@ -25,12 +24,19 @@ public class TerrainTile : MonoBehaviour
             Destroy(child.gameObject);
 
         // create new children sprites
+        int orderIndex = 0;
         foreach (TileSprite s in sprites)
         {
-            GameObject sideObj = Instantiate(spritePreFab, transform);
-            sideObj.GetComponent<SpriteRenderer>().sprite = s.terrain.sides[s.sideIndex];
-            GameObject cornerObj = Instantiate(spritePreFab, transform);
-            cornerObj.GetComponent<SpriteRenderer>().sprite = s.terrain.corners[s.cornerIndex];
+            SpriteRenderer cornerObj = Instantiate(spritePreFab, transform).GetComponent<SpriteRenderer>();
+            cornerObj.sprite = s.terrain.corners[s.cornerIndex];
+            cornerObj.sortingLayerName = "TerrainTransitions";
+            cornerObj.sortingOrder = orderIndex;
+            orderIndex++;
+            SpriteRenderer sideObj = Instantiate(spritePreFab, transform).GetComponent<SpriteRenderer>();
+            sideObj.sprite = s.terrain.sides[s.sideIndex];
+            sideObj.sortingLayerName = "TerrainTransitions";
+            sideObj.sortingOrder = orderIndex;
+            orderIndex++;
         }
     }
 }

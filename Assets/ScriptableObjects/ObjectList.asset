@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ObjectList
   m_EditorClassIdentifier: 
   terrainTiles:
-  - {fileID: 11400000, guid: 36a0ead7453322a46bd09efe1f8652a2, type: 2}
+  - {fileID: 11400000, guid: 5417c63e970b05d4b9956b19b3ef2b83, type: 2}
+  - {fileID: 11400000, guid: c3b75d3d901efa743accef835251b3e2, type: 2}
   - {fileID: 11400000, guid: e461b0736d14b84468a39e5772ff7211, type: 2}
   mapDecor:
   - {fileID: 11400000, guid: 53877b659b0e3ea4786cc1a4cc0f6f2a, type: 2}
