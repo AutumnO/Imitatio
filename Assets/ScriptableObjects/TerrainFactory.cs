@@ -18,7 +18,7 @@ public class TerrainFactory
         // find object list
         string[] objListSearch = AssetDatabase.FindAssets("ObjectList", new[] { "Assets/ScriptableObjects" });
         ObjectList objList = null;
-        if (objListSearch.Length > 0)
+        if (objListSearch.Length > 0) // TODO: do I need to change this to == 1?
         {
             string objListPath = AssetDatabase.GUIDToAssetPath(objListSearch[0]);
             objList = AssetDatabase.LoadAssetAtPath<ObjectList>(objListPath);
