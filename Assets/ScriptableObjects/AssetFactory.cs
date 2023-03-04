@@ -36,9 +36,11 @@ public class AssetFactory
             AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
         if (!Directory.Exists("Assets/ScriptableObjects/" + assetFolder))
             AssetDatabase.CreateFolder("Assets/ScriptableObjects", assetFolder);
+        if (!Directory.Exists("Assets/ScriptableObjects/ObjectLists"))
+            AssetDatabase.CreateFolder("Assets/ScriptableObjects", "ObjectLists");
 
         // find existing asset list
-        string[] assetListSearch = AssetDatabase.FindAssets(assetListName, new[] { "Assets/ScriptableObjects" });
+        string[] assetListSearch = AssetDatabase.FindAssets(assetListName, new[] { "Assets/ScriptableObjects/ObjectLists" });
         // missing line
         if (assetListSearch.Length == 1) // changed from > 0
         {
@@ -46,7 +48,7 @@ public class AssetFactory
             // missing line
         }
         else
-            Debug.LogError("Error: \"" + assetListName + "\" Asset List not found or returned multiple instances");
+            Debug.LogError("Error: \"" + assetListName + $"\" Asset List not found or returned multiple ({assetListSearch.Length}) instances");
 
         return "";
         // 2 missing sections
@@ -59,6 +61,11 @@ public class AssetFactory
     /// <param name="objectListFilePath">The file path to the object that holds the TerrainData objects.</param>
     private static void TerrainFactory(string objectListFilePath)
     {
+        if (objectListFilePath == "")
+        {
+            Debug.LogWarning("Warning: TerrainFactory function in AssetFactory provided no file path.");
+            return;
+        }
         // NOTE: can the ObjectList class be generalized?
         ObjectList objList = AssetDatabase.LoadAssetAtPath<ObjectList>(objectListFilePath);
 
@@ -77,7 +84,7 @@ public class AssetFactory
         int index = 0;
         foreach (TerrainDetails details in objList.terrainDetails)
         {
-            results = AssetDatabase.FindAssets(details.name, new[] { "Assets/ScriptableObject/TerrainData" });
+            results = AssetDatabase.FindAssets(details.name, new[] { "Assets/ScriptableObjects/TerrainData" });
             if (results.Length == 0)
             {
                 newTerrain = ScriptableObject.CreateInstance<TerrainData>();
