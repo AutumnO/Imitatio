@@ -9,13 +9,23 @@ using UnityEngine;
 /// </summary>
 public class AssetFactory
 {
+    private static readonly string mainPath = "Assets/ScriptableObjects"; // also change in FindAssetList at CreateFolder call
+    private static readonly string assetListsPath = mainPath + "/AssetLists"; // same as above
+
+    private static readonly string terrainDataPath = mainPath + "/TerrainData";
+
+    private static readonly string headFeaturesDataPath = mainPath + "/HeadFeatures";
+    private static readonly string eyesSpritesPath = "Assets/Images/CASObjects/HeadFeatures/Eyes";
+    private static readonly string mouthSpritesPath = "Assets/Images/CASObjects/HeadFeatures/Mouths";
+
     /// <summary>
     /// Updates all the asset folders and asset lists within the project.
     /// </summary>
     [MenuItem("AssetDatabase/UpdateAllAssets")] // add update as a method in Unity's top bar menu
     private static void UpdateAllAssets()
     {
-        TerrainFactory(FindAssetList("TerrainData", "ObjectList"));
+        TerrainFactory();
+        HeadFeatureFactory();
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
@@ -32,26 +42,22 @@ public class AssetFactory
     private static string FindAssetList(string assetFolder, string assetListName)
     {
         // ensure file path exists, if not create it
-        if (!Directory.Exists("Assets/ScriptableObjects"))
+        if (!Directory.Exists(mainPath))
             AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
-        if (!Directory.Exists("Assets/ScriptableObjects/" + assetFolder))
-            AssetDatabase.CreateFolder("Assets/ScriptableObjects", assetFolder);
-        if (!Directory.Exists("Assets/ScriptableObjects/ObjectLists"))
-            AssetDatabase.CreateFolder("Assets/ScriptableObjects", "ObjectLists");
+        if (!Directory.Exists(mainPath + "/" + assetFolder))
+            AssetDatabase.CreateFolder(mainPath, assetFolder);
+        if (!Directory.Exists(assetListsPath))
+            AssetDatabase.CreateFolder(mainPath, "AssetLists");
 
         // find existing asset list
-        string[] assetListSearch = AssetDatabase.FindAssets(assetListName, new[] { "Assets/ScriptableObjects/ObjectLists" });
-        // missing line
-        if (assetListSearch.Length == 1) // changed from > 0
-        {
+        string[] assetListSearch = AssetDatabase.FindAssets(assetListName, new[] { assetListsPath });
+        
+        if (assetListSearch.Length == 1)
             return AssetDatabase.GUIDToAssetPath(assetListSearch[0]);
-            // missing line
-        }
         else
             Debug.LogError("Error: \"" + assetListName + $"\" Asset List not found or returned multiple ({assetListSearch.Length}) instances");
 
         return "";
-        // 2 missing sections
     }
 
     /// <summary>
@@ -59,13 +65,15 @@ public class AssetFactory
     /// asset folder and from that, the terrain asset list.
     /// </summary>
     /// <param name="objectListFilePath">The file path to the object that holds the TerrainData objects.</param>
-    private static void TerrainFactory(string objectListFilePath)
+    private static void TerrainFactory()
     {
+        string objectListFilePath = FindAssetList("TerrainData", "ObjectList");
         if (objectListFilePath == "")
         {
             Debug.LogWarning("Warning: TerrainFactory function in AssetFactory provided no file path.");
             return;
         }
+
         // NOTE: can the ObjectList class be generalized?
         ObjectList objList = AssetDatabase.LoadAssetAtPath<ObjectList>(objectListFilePath);
 
@@ -84,12 +92,12 @@ public class AssetFactory
         int index = 0;
         foreach (TerrainDetails details in objList.terrainDetails)
         {
-            results = AssetDatabase.FindAssets(details.name, new[] { "Assets/ScriptableObjects/TerrainData" });
+            results = AssetDatabase.FindAssets(details.name, new[] { terrainDataPath });
             if (results.Length == 0)
             {
                 newTerrain = ScriptableObject.CreateInstance<TerrainData>();
                 newTerrain.Init(details, index, GetSprites(index, sprites));
-                AssetDatabase.CreateAsset(newTerrain, $@"Assets/ScriptableObjects/TerrainData/{details.name}.asset");
+                AssetDatabase.CreateAsset(newTerrain, terrainDataPath + $@"/{details.name}.asset");
             }
             else if (results.Length == 1)
             {
@@ -104,6 +112,123 @@ public class AssetFactory
             {
                 objList.terrainTiles[index] = newTerrain;
                 EditorUtility.SetDirty(newTerrain);
+            }
+            index++;
+        }
+    }
+
+    /// <summary>
+    /// Grabs the various head feature sprite sheets in the image asset folders, then updates the head
+    /// features data folder and from that, the head feature asset list.
+    /// </summary>
+    /// <param name="objectListFilePath">The file path to the object that holds the eyes and mouth objects.</param>
+    private static void HeadFeatureFactory()
+    {
+        string objectListFilePath = FindAssetList("HeadFeatures", "CASHeadFeatureList");
+        if (objectListFilePath == "")
+        {
+            Debug.LogWarning("Warning: HeadFeatureFactory function in AssetFactory provided no file path.");
+            return;
+        }
+
+        CASHeadFeatureList objList = AssetDatabase.LoadAssetAtPath<CASHeadFeatureList>(objectListFilePath);
+
+        if (!Directory.Exists(headFeaturesDataPath + "/EyesData"))
+            AssetDatabase.CreateFolder(headFeaturesDataPath, "EyesData");
+        if (!Directory.Exists(headFeaturesDataPath + "/MouthData"))
+            AssetDatabase.CreateFolder(headFeaturesDataPath, "MouthData");
+
+        // go through each of the catagories of head features
+        // TODO: edit to accept spritesheets for color and animated eye stuff
+        string[] spriteSheetGUIDs;
+        Texture2D[] spriteSheets;
+        Sprite[] sprites;
+        string spriteSheetPath;
+        string[] results;
+        string resultPath;
+        int index;
+
+        // EYES
+        spriteSheetGUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { eyesSpritesPath });
+        spriteSheets = new Texture2D[spriteSheetGUIDs.Length];
+        sprites = new Sprite[spriteSheets.Length];
+        for (int i = 0; i < spriteSheetGUIDs.Length; i++)
+        {
+            spriteSheetPath = AssetDatabase.GUIDToAssetPath(spriteSheetGUIDs[i]);
+            spriteSheets[i] = AssetDatabase.LoadAssetAtPath(spriteSheetPath, typeof(Texture2D)) as Texture2D;
+            sprites[i] = AssetDatabase.LoadAssetAtPath(spriteSheetPath, typeof(Sprite)) as Sprite;
+        }
+        
+        if (sprites.Length == 0)
+            Debug.LogWarning("Warning: HeadFeatureFactory found no eye sprites at the set path.");
+
+        objList.eyes = new EyesData[spriteSheets.Length];
+        EyesData newEyes = null;
+        index = 0;
+        foreach (Sprite sprite in sprites)
+        {
+            results = AssetDatabase.FindAssets(sprite.name, new[] { headFeaturesDataPath + "/EyesData" });
+            if (results.Length == 0)
+            {
+                newEyes = ScriptableObject.CreateInstance<EyesData>();
+                newEyes.Init(sprite);
+                AssetDatabase.CreateAsset(newEyes, headFeaturesDataPath + $@"/EyesData/{sprite.name}.asset");
+            }
+            else if (results.Length == 1)
+            {
+                resultPath = AssetDatabase.GUIDToAssetPath(results[0]);
+                newEyes = AssetDatabase.LoadAssetAtPath<EyesData>(resultPath);
+                newEyes.Init(sprite);
+            }
+            else
+                Debug.LogError($"More than 1 Data Asset found ({sprite.name})");
+
+            if (newEyes != null)
+            {
+                objList.eyes[index] = newEyes;
+                EditorUtility.SetDirty(newEyes);
+            }
+            index++;
+        }
+
+        // MOUTHS
+        spriteSheetGUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { mouthSpritesPath });
+        spriteSheets = new Texture2D[spriteSheetGUIDs.Length];
+        sprites = new Sprite[spriteSheets.Length];
+        for (int i = 0; i < spriteSheetGUIDs.Length; i++)
+        {
+            spriteSheetPath = AssetDatabase.GUIDToAssetPath(spriteSheetGUIDs[i]);
+            spriteSheets[i] = AssetDatabase.LoadAssetAtPath(spriteSheetPath, typeof(Texture2D)) as Texture2D;
+            sprites[i] = AssetDatabase.LoadAssetAtPath(spriteSheetPath, typeof(Sprite)) as Sprite;
+        }
+        if (spriteSheets.Length == 0)
+            Debug.LogWarning("Warning: HeadFeatureFactory found no mouth sprites at the set path.");
+
+        objList.mouths = new MouthData[spriteSheets.Length];
+        MouthData newMouth = null;
+        index = 0;
+        foreach (Sprite sprite in sprites)
+        {
+            results = AssetDatabase.FindAssets(sprite.name, new[] { headFeaturesDataPath + "/MouthData" });
+            if (results.Length == 0)
+            {
+                newMouth = ScriptableObject.CreateInstance<MouthData>();
+                newMouth.Init(sprite);
+                AssetDatabase.CreateAsset(newMouth, headFeaturesDataPath + $@"/MouthData/{sprite.name}.asset");
+            }
+            else if (results.Length == 1)
+            {
+                resultPath = AssetDatabase.GUIDToAssetPath(results[0]);
+                newMouth = AssetDatabase.LoadAssetAtPath<MouthData>(resultPath);
+                newMouth.Init(sprite);
+            }
+            else
+                Debug.LogError($"More than 1 Data Asset found ({sprite.name})");
+
+            if (newMouth != null)
+            {
+                objList.mouths[index] = newMouth;
+                EditorUtility.SetDirty(newMouth);
             }
             index++;
         }

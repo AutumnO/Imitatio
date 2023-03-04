@@ -6,10 +6,9 @@ using UnityEngine;
 public class CASHeadFeatureList : ScriptableObject
 {
     // TODO: update GameObject types to class names
-    public GameObject[] eyes;
-    public GameObject[] noses;
-    public GameObject[] mouths;
-    public GameObject[] hairs;
     public GameObject[] eyebrows;
+    public EyesData[] eyes;
+    public MouthData[] mouths;
+    public GameObject[] hairs;
     public GameObject[] facialMarks;
 }
