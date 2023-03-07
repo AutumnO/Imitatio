@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ObjectSelectionWindow : MonoBehaviour
 {
     [SerializeField] protected GameObject _objectListItem;
-    [SerializeField] private ObjectType _objType;
+    [SerializeField] private BasicAssetType _objType;
 
     protected GridManager _gridManager;
     protected GameObject[] _listItems;
@@ -33,7 +33,7 @@ public class ObjectSelectionWindow : MonoBehaviour
     }
     public virtual Sprite GetWindowSprite(int index)
     {
-        return _worldObjects[index].sprite;
+        return _worldObjects[index].mainSprite;
     }
     private void BuildItemList(int listLength) 
     {

@@ -41,7 +41,7 @@ public class TileRegion : MonoBehaviour
     public void PlaceObject(WorldObjectData obj, Transform loc, TileRegion propOrigin)
     {
         _propData = obj;
-        _prop.sprite = _propData.sprite;
+        _prop.sprite = _propData.mainSprite;
         _prop.transform.position = loc.position;
         _propOrigin = propOrigin;
     }

@@ -108,7 +108,7 @@ public class GridManager : MonoBehaviour
     {
         _grabbedProp = data;
         _grabbedTerrain = null;
-        GrabbedObjectHandler(data.sprite);
+        GrabbedObjectHandler(data.mainSprite);
     }
     public void GrabObject(TerrainData data)
     {
@@ -241,11 +241,11 @@ public class GridManager : MonoBehaviour
     {
         return _objectList.terrainTiles;
     }
-    public WorldObjectData[] GetWorldObjects(ObjectType type)
+    public WorldObjectData[] GetWorldObjects(BasicAssetType type)
     {
-        if (type == ObjectType.Prop)
+        if (type == BasicAssetType.Prop)
             return _objectList.mapDecor;
-        else if (type == ObjectType.Building)
+        else if (type == BasicAssetType.Building)
             return _objectList.buildings;
         else
             return _objectList.other;
