@@ -114,4 +114,37 @@ public class AvatarCosmeticsList : ScriptableObject
             throw;
         }
     }
+
+    public BasicAsset[] GetList(BasicAssetType type)
+    {
+        switch (type)
+        {
+            case BasicAssetType.Eyebrow:
+                return eyebrows;
+            case BasicAssetType.Eyes:
+                return eyes;
+            case BasicAssetType.Mouth:
+                return mouths;
+            case BasicAssetType.Hair:
+                return hairs;
+            case BasicAssetType.FacialMark:
+                return facialMarks;
+            case BasicAssetType.HeadDecor:
+                return headDecor;
+            case BasicAssetType.Shirt:
+                return shirts;
+            case BasicAssetType.Outfit:
+                return outfits;
+            case BasicAssetType.Pants:
+                return pants;
+            case BasicAssetType.Socks:
+                return socks;
+            case BasicAssetType.Shoes:
+                return shoes;
+            default:
+                Debug.LogWarning("Warning: (AvatarCosmeticsList(GetList)) was not given " +
+                    "the right BasicAssetType for this list type.");
+                return new BasicAsset[0];
+        }
+    }
 }
