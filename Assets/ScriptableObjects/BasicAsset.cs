@@ -7,6 +7,7 @@ public enum BasicAssetType
     // World Objects
     Prop, Building, MiscWorld,
     // Character Creation
+    Body,
     Eyebrow, Eyes, Mouth, Hair, FacialMark,
     HeadDecor, Shirt, Outfit, Pants, Socks, Shoes
 }

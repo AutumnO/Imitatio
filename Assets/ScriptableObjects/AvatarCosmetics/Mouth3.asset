@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mouth3
   m_EditorClassIdentifier: 
   mainSprite: {fileID: 21300000, guid: cb4881a51d0cc4b45a6144bd13ea2cd5, type: 3}
-  assetType: 5
+  assetType: 6

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Eyebrow2
   m_EditorClassIdentifier: 
   mainSprite: {fileID: 21300000, guid: 5c98b8366fe418b43bc9f6b542e5d744, type: 3}
-  assetType: 3
+  assetType: 4

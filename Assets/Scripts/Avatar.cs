@@ -14,9 +14,10 @@ public class Avatar : MonoBehaviour
     private BasicAsset _hair;
     private BasicAsset _headDecor;
 
+    private BasicAsset _body;
     private BasicAsset _clothing;
 
-    private void SetAsset(BasicAsset asset, BasicAssetType type)
+    public void SetAsset(BasicAsset asset, BasicAssetType type)
     {
         GetAssetFromType(type) = asset;
         UpdateSprites();
@@ -38,6 +39,8 @@ public class Avatar : MonoBehaviour
                 return ref _hair;
             case BasicAssetType.HeadDecor:
                 return ref _headDecor;
+            case BasicAssetType.Body:
+                return ref _body;
             default:
                 Debug.LogWarning("Avatar class GetAssetFromType not provided with recognized BasicAssetType");
                 return ref _clothing;
@@ -46,13 +49,22 @@ public class Avatar : MonoBehaviour
 
     private void UpdateSprites()
     {
-        head.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = _facialMarks.mainSprite;
-        head.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite = _eyebrows.mainSprite;
-        head.transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>().sprite = _eyes.mainSprite;
-        head.transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().sprite = _mouth.mainSprite;
-        head.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().sprite = _hair.mainSprite;
-        head.transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>().sprite = _headDecor.mainSprite;
+        if(_facialMarks != null)
+            head.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = _facialMarks.mainSprite;
+        if(_eyebrows != null)
+            head.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite = _eyebrows.mainSprite;
+        if (_eyes != null)
+            head.transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>().sprite = _eyes.mainSprite;
+        if (_mouth != null)
+            head.transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().sprite = _mouth.mainSprite;
+        if (_hair != null)
+            head.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().sprite = _hair.mainSprite;
+        if (_headDecor != null)
+            head.transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>().sprite = _headDecor.mainSprite;
 
-        body.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = _clothing.mainSprite;
+        if (_body != null)
+            body.GetComponent<SpriteRenderer>().sprite = _body.mainSprite;
+        if (_clothing != null)
+            body.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = _clothing.mainSprite;
     }
 }

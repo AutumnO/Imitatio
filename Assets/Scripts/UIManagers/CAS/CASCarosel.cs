@@ -26,8 +26,10 @@ public class CASCarosel : MonoBehaviour
         for (int i = 0; i < _objects.Length; i++)
         {
             _listItems[i] = Instantiate(caroselItem, transform);
+            _listItems[i].GetComponent<AssetComponent>().asset = _objects[i];
             _listItems[i].GetComponentsInChildren<Image>()[1].sprite = _objects[i].mainSprite;
             _listItems[i].GetComponentsInChildren<Image>()[1].preserveAspect = true;
+            _listItems[i].GetComponent<Toggle>().group = GetComponent<ToggleGroup>();
         }
     }
 }

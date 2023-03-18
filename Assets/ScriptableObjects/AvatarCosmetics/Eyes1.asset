@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Eyes1
   m_EditorClassIdentifier: 
   mainSprite: {fileID: 21300000, guid: 9ba9b3fda5ba1864d812f3541babe247, type: 3}
-  assetType: 4
+  assetType: 5
