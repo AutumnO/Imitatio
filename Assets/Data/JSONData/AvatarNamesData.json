@@ -1,0 +1,40 @@
+{
+	"allNames": [
+		{
+			"avatarName": "Abby",
+			"gender": "Female"
+		},
+		{
+			"avatarName": "Joan",
+			"gender": "Female"
+		},
+		{
+			"avatarName": "John",
+			"gender": "Male"
+		},
+		{
+			"avatarName": "Johnny",
+			"gender": "Male"
+		},
+		{
+			"avatarName": "Josh",
+			"gender": "Male"
+		},
+		{
+			"avatarName": "Katrina",
+			"gender": "Female"
+		},
+		{
+			"avatarName": "Liam",
+			"gender": "Male"
+		},
+		{
+			"avatarName": "Riley",
+			"gender": "Unisex"
+		},
+		{
+			"avatarName": "Roman",
+			"gender": "Male"
+		}
+	]
+}
