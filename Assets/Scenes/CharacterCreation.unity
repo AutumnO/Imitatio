@@ -2682,6 +2682,10 @@ MonoBehaviour:
   _avatarCosmeticsAssets: {fileID: 11400000, guid: 2d45963fe7bfbb74ab8ec6a2522c3d9a, type: 2}
   _caroselItemPrefab: {fileID: 7759654200037739730, guid: 830acf83ab1bc364a8eda6b45090e375, type: 3}
   _mainAvatar: {fileID: 1154792734}
+  _nameInputFieldObj: {fileID: 221934243}
+  _genderToggleGroupObj: {fileID: 1239756297}
+  _ageToggleGroupObj: {fileID: 1950395191}
+  _skinColorToggleGroupObj: {fileID: 2115361905}
   _bodyTypePanel: {fileID: 495970600}
   _eyebrowsToggleGroupObj: {fileID: 1091992508}
   _eyesToggleGroupObj: {fileID: 633641045}

@@ -1,11 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Avatar : MonoBehaviour
 {
     [SerializeField] private GameObject head;
     [SerializeField] private GameObject body;
+
+    public string avatarName;
+    public char gender;
+    public int age;
+
+    private int _skinColor;
 
     private BasicAsset _facialMarks;
     private BasicAsset _eyebrows;
@@ -17,6 +25,41 @@ public class Avatar : MonoBehaviour
     private BasicAsset _body;
     private BasicAsset _clothing;
 
+    public void SetName(string name)
+    {
+        avatarName = name;
+    }
+    public void SetGender(string info)
+    {
+        info = info.ToLower();
+        if (info.Contains("female"))
+            gender = 'F';
+        else if (info.Contains("male"))
+            gender = 'M';
+        else
+            Debug.LogWarning("Avatar SetGender method couldn't parse info parameter.");
+    }
+    public void SetAge(string info)
+    {
+        info = info.ToLower();
+        if (info.Contains("baby"))
+            age = 0;
+        else if (info.Contains("child"))
+            age = 1;
+        else if (info.Contains("teen"))
+            age = 2;
+        else if (info.Contains("adult"))
+            age = 3;
+        else if (info.Contains("elder"))
+            age = 4;
+        else
+            Debug.LogWarning("Avatar SetAge method couldn't parse info parameter.");
+    }
+    public void SetSkin(int value)
+    {
+        // TODO: set body/head sprites accordingly
+        _skinColor = value;
+    }
     public void SetAsset(BasicAsset asset, BasicAssetType type)
     {
         GetAssetFromType(type) = asset;
