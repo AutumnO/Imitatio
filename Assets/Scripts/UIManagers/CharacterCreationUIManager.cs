@@ -11,6 +11,11 @@ public class CharacterCreationUIManager : MonoBehaviour
     [SerializeField] private GameObject _caroselItemPrefab;
     [SerializeField] private GameObject _mainAvatar;
     [SerializeField] private GameObject _nameInputFieldObj;
+
+    [SerializeField] private Button _addFamilyButton;
+
+
+    // toggle groups
     [SerializeField] private GameObject _genderToggleGroupObj;
     [SerializeField] private GameObject _ageToggleGroupObj;
     [SerializeField] private GameObject _skinColorToggleGroupObj;
@@ -29,6 +34,8 @@ public class CharacterCreationUIManager : MonoBehaviour
         AddAvatarListener(_eyebrowsToggleGroupObj, BasicAssetType.Eyebrow);
         AddAvatarListener(_eyesToggleGroupObj, BasicAssetType.Eyes);
         AddAvatarListener(_mouthToggleGroupObj, BasicAssetType.Mouth);
+
+        AddRandomizeListener(_addFamilyButton);
     }
 
     public AvatarCosmeticsList GetCaroselObjects()
@@ -104,5 +111,12 @@ public class CharacterCreationUIManager : MonoBehaviour
             BasicAsset asset = toggle.gameObject.GetComponent<AssetComponent>().asset;
             _mainAvatar.GetComponent<Avatar>().SetAsset(asset, type);
         }
+    }
+
+    private void AddRandomizeListener(Button addFamilyButton)
+    {
+        Avatar avatar = _mainAvatar.GetComponent<Avatar>();
+        AvatarRandomizer rand = gameObject.GetComponent<AvatarRandomizer>();
+        addFamilyButton.onClick.AddListener(delegate { rand.RandomizeAvatar(avatar, true); });
     }
 }
