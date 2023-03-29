@@ -19,6 +19,7 @@ public static class AssetFactory
     private static readonly string buildingSpritesPath = "Assets/Images/WorldObjects/Buildings";
 
     private static readonly string avatarCosmeticsDataPath = mainPath + "/AvatarCosmetics"; // change in AvatarCosmeticsFactory
+    private static readonly string hairsSpritesPath = "Assets/Images/AvatarCosmetics/HeadFeatures/Hairs";
     private static readonly string eyebrowsSpritesPath = "Assets/Images/AvatarCosmetics/HeadFeatures/Eyebrows";
     private static readonly string eyesSpritesPath = "Assets/Images/AvatarCosmetics/HeadFeatures/Eyes";
     private static readonly string mouthSpritesPath = "Assets/Images/AvatarCosmetics/HeadFeatures/Mouths";
@@ -169,7 +170,11 @@ public static class AssetFactory
         AvatarCosmeticsList assetList = AssetDatabase.LoadAssetAtPath<AvatarCosmeticsList>(assetListFilePath);
         string[] spriteSheetGUIDs;
 
-        // EYES
+        // HAIRS
+        spriteSheetGUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { hairsSpritesPath });
+        AvatarCosmeticsListBuilder(assetList, BasicAssetType.Hair, spriteSheetGUIDs);
+
+        // EYEBROWS
         spriteSheetGUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { eyebrowsSpritesPath });
         AvatarCosmeticsListBuilder(assetList, BasicAssetType.Eyebrow, spriteSheetGUIDs);
 

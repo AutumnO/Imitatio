@@ -30,7 +30,7 @@ public class AvatarRandomizer : MonoBehaviour
         avatar.SetAsset(_cosmetics.bodies[Random.Range(0, _cosmetics.bodies.Length)], BasicAssetType.Body);
 
         avatar.SetAsset(_cosmetics.eyebrows[Random.Range(0, _cosmetics.eyebrows.Length)], BasicAssetType.Eyebrow);
-        //avatar.SetAsset(_cosmetics.hairs[Random.Range(0, _cosmetics.hairs.Length)], BasicAssetType.Hair);
+        avatar.SetAsset(_cosmetics.hairs[Random.Range(0, _cosmetics.hairs.Length)], BasicAssetType.Hair);
 
         avatar.SetAsset(_cosmetics.eyes[Random.Range(0, _cosmetics.eyes.Length)], BasicAssetType.Eyes);
         avatar.SetAsset(_cosmetics.mouths[Random.Range(0, _cosmetics.mouths.Length)], BasicAssetType.Mouth);
