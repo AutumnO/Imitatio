@@ -25,6 +25,8 @@ public class Avatar : MonoBehaviour
     private BasicAsset _body;
     private BasicAsset _clothing;
 
+    private AvatarPersonality _personality;
+
     public void SetName(string name)
     {
         avatarName = name;
